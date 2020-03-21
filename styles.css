@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Source+Sans+Pro&display=swap");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar a {
+  padding: 15px 0;
+  display: block;
+}
+
+.sticky {
+  padding-top: 7px !important;
+  padding-bottom: 7px !important;
+  background-color: rgb(32, 36, 44) !important;
+}
+
+.github a,
+.lastfm a {
+  text-decoration: none;
+  color: black;
+  text-transform: capitalize;
+  transition: all 0.1s ease-in-out;
+}
+.github a:hover,
+.lastfm a:hover {
+  color: #444;
+}
+
+.single-post img {
+  max-width: 100%;
+}
+.postTemplate .right img {
+  width: 150px;
+  height: 100px;
+  object-fit: contain;
+}
+
+blockquote {
+  padding-left: 20px;
+  margin-left: 0;
+  border-left: 3px solid crimson;
+}
