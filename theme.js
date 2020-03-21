@@ -79,6 +79,9 @@ export const theme = () => {
         ...nightOwl,
         marginTop: preset.space[3],
         marginBottom: preset.space[3]
+      },
+      img: {
+        maxWidth: "100%"
       }
     }
   });

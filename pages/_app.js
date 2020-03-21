@@ -1,5 +1,5 @@
 import { MDXProvider } from "@mdx-js/react";
-// import Prism from "@theme-ui/prism";
+import Prism from "@theme-ui/prism";
 import React from "react";
 import { ThemeProvider } from "theme-ui";
 import "../styles.css";
@@ -7,7 +7,8 @@ import theme from "../theme";
 
 const components = {
   pre: ({ children }) => <>{children}</>,
-  code: (props) => <pre {...props} />
+  // code: (props) => <pre {...props} />
+  code: Prism
 };
 
 const MyApp = ({ Component, pageProps }) => {

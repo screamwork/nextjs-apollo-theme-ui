@@ -19,6 +19,7 @@ const MdxPage = () => {
   return (
     <Layout>
       <Box
+        py={theme.space[7]}
         sx={{
           flex: 1,
           display: "flex",
@@ -28,7 +29,9 @@ const MdxPage = () => {
           backgroundColor: "white"
         }}
       >
-        <Box p={5}>{DynamicComponent && <DynamicComponent />}</Box>
+        <Box p={4} sx={{ width: ["100%", "100%", "75%"] }}>
+          {DynamicComponent && <DynamicComponent />}
+        </Box>
       </Box>
     </Layout>
   );

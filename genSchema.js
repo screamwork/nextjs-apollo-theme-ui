@@ -16,7 +16,7 @@ function requireF(modulePath) {
 }
 
 export const genSchema = () => {
-  const pathToModules = `./modules`;
+  const pathToModules = `${process.cwd()}/modules`;
 
   const graphqlTypes = glob
     .sync(`${pathToModules}/**/*.graphql`)

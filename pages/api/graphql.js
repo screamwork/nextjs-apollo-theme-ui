@@ -1,5 +1,6 @@
 import { ApolloServer } from "apollo-server-micro";
 import gql from "graphql-tag";
+// import { genSchema } from "../../genSchema";
 
 const typeDefs = gql`
   type Query {
@@ -14,6 +15,7 @@ const resolvers = {
 };
 
 const apolloServer = new ApolloServer({
+  // schema: genSchema(),
   typeDefs,
   resolvers,
   // debug: true,
