@@ -26,7 +26,7 @@ const apolloServer = new ApolloServer({
   //   onConnect: () => console.log("connected"),
   //   onDisconnect: () => console.log("disconnected")
   // },
-  // introspection: true,
+  introspection: true,
   context: ({ req, res }) => ({
     // redis,
     url: req ? req.protocol + "://" + req.get("host") : false,
