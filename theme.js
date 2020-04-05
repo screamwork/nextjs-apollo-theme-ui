@@ -81,7 +81,10 @@ export const theme = () => {
         marginBottom: preset.space[3]
       },
       img: {
-        maxWidth: "100%"
+        // maxWidth: "100%",
+        maxHeight: "450px",
+        width: "100%",
+        objectFit: "cover"
       }
     }
   });

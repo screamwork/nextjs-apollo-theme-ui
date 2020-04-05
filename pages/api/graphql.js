@@ -18,7 +18,7 @@ const apolloServer = new ApolloServer({
   // schema: genSchema(),
   typeDefs,
   resolvers,
-  // debug: true,
+  debug: true,
   // playground: {
   //   endpoint: "/graphql"
   //   // subscriptionEndpoint: "/subscriptions"

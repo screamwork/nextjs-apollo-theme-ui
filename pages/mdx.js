@@ -29,7 +29,7 @@ const MdxPage = () => {
           backgroundColor: "white"
         }}
       >
-        <Box p={4} sx={{ width: ["100%", "100%", "75%"] }}>
+        <Box p={4} sx={{ width: ["100%", "100%", "50%"] }}>
           {DynamicComponent && <DynamicComponent />}
         </Box>
       </Box>

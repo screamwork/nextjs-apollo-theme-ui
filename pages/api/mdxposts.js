@@ -3,7 +3,7 @@ var fs = require("fs");
 var path = require("path");
 
 export default (req, res) => {
-  const filepath = process.cwd() + "/pages/mdx/";
+  const filepath = path.join(process.cwd(), "/pages", "/mdx/");
   let mdxPages = [];
 
   let allPages = getFiles(filepath);
