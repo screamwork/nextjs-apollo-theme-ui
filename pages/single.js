@@ -25,16 +25,20 @@ const Single = ({ post }) => {
     <Layout>
       <Box
         className="single-post"
-        mt={theme.space[6]}
+        pt={theme.space[7]}
+        pb={theme.space[5]}
         sx={{
           flex: 1,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "white"
+          backgroundColor: "white",
         }}
       >
-        <Box p={4} sx={{ width: ["100%", "100%", "75%"], maxWidth: "100%" }}>
+        <Box
+          p={[4, 4, 4]}
+          sx={{ width: ["100%", "100%", "75%"], maxWidth: "100%" }}
+        >
           <Heading
             as="h2"
             mb={2}
@@ -72,7 +76,7 @@ Single.getInitialProps = async (context) => {
   const slug = context.query.slug;
   const { data, loading, error } = await context.apolloClient.query({
     query: postQuery,
-    variables: { slug }
+    variables: { slug },
   });
 
   if (error) throw error;

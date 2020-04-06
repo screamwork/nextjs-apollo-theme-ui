@@ -11,13 +11,15 @@ export const Nav = () => {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
   let isMounted = true;
 
+  const iconHeight = `1.5em`;
+
   const handleSetIsSticky = React.useCallback((val) => {
     setIsSticky(val);
   }, []);
 
   React.useEffect(() => {
     const header = document.getElementById("nav");
-    const sticky = header.offsetTop + 70;
+    const sticky = header.offsetTop + 50;
     const scrollCallBack = window.addEventListener("scroll", () => {
       if (isMounted) {
         if (window.pageYOffset > sticky) {
@@ -62,7 +64,7 @@ export const Nav = () => {
           position: "fixed",
           top: 0,
           left: 0,
-          right: 0
+          right: 0,
         }}
       >
         <Link href="/">
@@ -70,7 +72,7 @@ export const Nav = () => {
             <img
               style={{
                 zIndex: 1,
-                height: 40
+                height: 40,
               }}
               src="http://localhost/wordpressMU/avada/wp-content/uploads/sites/4/2016/06/avada-freelance-logo.png"
             />
@@ -83,31 +85,31 @@ export const Nav = () => {
             maxWidth: "150px",
             display: "flex",
             justifyContent: "space-evenly",
-            zIndex: 5
+            zIndex: 5,
           }}
         >
           {sidebarOpen ? (
             <FaMinus
-              size={`1.75em`}
+              size={iconHeight}
               onClick={() => handlePlusClick()}
               color={"crimson"}
             />
           ) : (
             <FaPlus
-              size={`1.75em`}
+              size={iconHeight}
               onClick={() => handlePlusClick()}
               color={"whiteSmoke"}
             />
           )}
           {showMenu ? (
             <FaTimes
-              size={`1.75em`}
+              size={iconHeight}
               onClick={() => handleBarsClick()}
               color={showMenu ? "crimson" : "inherit"}
             />
           ) : (
             <FaBars
-              size={`1.75em`}
+              size={iconHeight}
               onClick={() => handleBarsClick()}
               color={"whiteSmoke"}
             />
@@ -120,7 +122,7 @@ export const Nav = () => {
 
 const links = [
   { href: "https://zeit.co/now", label: "ZEIT" },
-  { href: "https://github.com/zeit/next.js", label: "GitHub" }
+  { href: "https://github.com/zeit/next.js", label: "GitHub" },
 ].map((link) => {
   link.key = `nav-link-${link.href}-${link.label}`;
   return link;
@@ -133,7 +135,7 @@ const linkStyle = {
   padding: "5px 0",
   textDecoration: "none",
   textTransform: "uppercase",
-  color: "crimson"
+  color: "crimson",
 };
 
 const NavHtml = ({ setShowMenu, showMenu }) => (
@@ -168,7 +170,7 @@ const Menu = ({ setShowMenu, showMenu }) => (
       alignItems: "center",
       justifyContent: "center",
       backgroundColor: "#20232c",
-      zIndex: 1
+      zIndex: 1,
     }}
   >
     <NavHtml setShowMenu={setShowMenu} showMenu={showMenu} />
@@ -190,7 +192,7 @@ const Sidebar = ({ sidebarOpen }) => (
       justifyContent: "center",
       backgroundColor: "#20232c",
       zIndex: 1,
-      transition: "all 0.25s ease-out"
+      transition: "all 0.25s ease-out",
     }}
   >
     <NavHtml />

@@ -7,8 +7,7 @@ import theme from "../theme";
 
 const components = {
   pre: ({ children }) => <>{children}</>,
-  // code: (props) => <pre {...props} />
-  code: Prism
+  code: Prism,
 };
 
 const MyApp = ({ Component, pageProps }) => {

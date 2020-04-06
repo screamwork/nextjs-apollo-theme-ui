@@ -1,30 +1,10 @@
 import nightOwl from "@theme-ui/prism/presets/night-owl.json";
-// import wp2016 from "typography-theme-wordpress-2012";
-
-// const theme = merge(toTheme(wp2016), {
-//   colors: {
-//     text: "#000",
-//     background: "#fff",
-//     primary: "#07c"
-//   },
-//   breakpoints: ["40em", "56em", "64em"],
-//   myStyles: {
-//     navBlack: "rgb(32, 36, 44)"
-//   },
-//   styles: {
-//     code: {
-//       ...nightOwl
-//     }
-//   }
-// });
-
-// export default theme;
 
 export const theme = () => {
   return Object.assign({}, preset, {
     breakpoints: ["40em", "56em", "64em"],
     myStyles: {
-      navBlack: "rgb(32, 36, 44)"
+      navBlack: "rgb(32, 36, 44)",
     },
     styles: {
       h1: {
@@ -33,7 +13,7 @@ export const theme = () => {
         fontWeight: "heading",
         color: "primary",
         mt: 4,
-        mb: 2
+        mb: 2,
       },
       h2: {
         fontSize: 4,
@@ -41,7 +21,7 @@ export const theme = () => {
         fontWeight: "heading",
         color: "primary",
         mt: 4,
-        mb: 2
+        mb: 2,
       },
       h3: {
         fontSize: 3,
@@ -49,7 +29,7 @@ export const theme = () => {
         fontWeight: "heading",
         color: "primary",
         mt: 4,
-        mb: 2
+        mb: 2,
       },
       h4: {
         fontSize: 2,
@@ -57,7 +37,7 @@ export const theme = () => {
         fontWeight: "heading",
         color: "primary",
         mt: 4,
-        mb: 2
+        mb: 2,
       },
       h5: {
         fontSize: 1,
@@ -65,7 +45,7 @@ export const theme = () => {
         fontWeight: "heading",
         color: "primary",
         mt: 4,
-        mb: 2
+        mb: 2,
       },
       h6: {
         fontSize: 0,
@@ -73,20 +53,20 @@ export const theme = () => {
         fontWeight: "heading",
         color: "primary",
         mt: 4,
-        mb: 2
+        mb: 2,
       },
       code: {
         ...nightOwl,
         marginTop: preset.space[3],
-        marginBottom: preset.space[3]
+        marginBottom: preset.space[3],
       },
       img: {
-        // maxWidth: "100%",
-        maxHeight: "450px",
         width: "100%",
-        objectFit: "cover"
-      }
-    }
+        maxHeight: "450px",
+        maxWidth: "100%",
+        objectFit: "cover",
+      },
+    },
   });
 };
 
@@ -101,65 +81,65 @@ export const preset = {
     muted: "#f6f6f9",
     gray: "#dddddf",
     accent: "#639",
-    highlight: "hsla(205, 100%, 40%, 0.125)"
+    highlight: "hsla(205, 100%, 40%, 0.125)",
   },
   fonts: {
     body: "system-ui, sans-serif",
     heading: "inherit",
-    monospace: "Menlo, monospace"
+    monospace: "Menlo, monospace",
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
     body: 400,
     heading: 700,
-    bold: 700
+    bold: 700,
   },
   lineHeights: {
     body: 1.5,
-    heading: 1.25
+    heading: 1.25,
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   sizes: {
-    avatar: 48
+    avatar: 48,
   },
   radii: {
     default: 4,
-    circle: 99999
+    circle: 99999,
   },
   shadows: {
-    card: "0 0 4px rgba(0, 0, 0, .125)"
+    card: "0 0 4px rgba(0, 0, 0, .125)",
   },
   // rebass variants
   text: {
     heading: {
       fontFamily: "heading",
       lineHeight: "heading",
-      fontWeight: "heading"
+      fontWeight: "heading",
     },
     display: {
       fontFamily: "heading",
       fontWeight: "heading",
       lineHeight: "heading",
-      fontSize: [5, 6, 7]
+      fontSize: [5, 6, 7],
     },
     caps: {
       textTransform: "uppercase",
-      letterSpacing: "0.1em"
-    }
+      letterSpacing: "0.1em",
+    },
   },
   variants: {
     avatar: {
       width: "avatar",
       height: "avatar",
-      borderRadius: "circle"
+      borderRadius: "circle",
     },
     card: {
       p: 2,
       bg: "background",
-      boxShadow: "card"
+      boxShadow: "card",
     },
     link: {
-      color: "primary"
+      color: "primary",
     },
     nav: {
       "fontSize": 1,
@@ -169,9 +149,9 @@ export const preset = {
       "color": "inherit",
       "textDecoration": "none",
       ":hover,:focus,.active": {
-        color: "primary"
-      }
-    }
+        color: "primary",
+      },
+    },
   },
   buttons: {
     primary: {
@@ -179,25 +159,25 @@ export const preset = {
       fontWeight: "bold",
       color: "background",
       bg: "primary",
-      borderRadius: "default"
+      borderRadius: "default",
     },
     outline: {
       variant: "buttons.primary",
       color: "primary",
       bg: "transparent",
-      boxShadow: "inset 0 0 2px"
+      boxShadow: "inset 0 0 2px",
     },
     secondary: {
       variant: "buttons.primary",
       color: "background",
-      bg: "secondary"
-    }
+      bg: "secondary",
+    },
   },
   styles: {
     root: {
       fontFamily: "body",
       fontWeight: "body",
-      lineHeight: "body"
-    }
-  }
+      lineHeight: "body",
+    },
+  },
 };

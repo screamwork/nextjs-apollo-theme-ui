@@ -3,7 +3,7 @@ var fs = require("fs");
 var path = require("path");
 
 export default (req, res) => {
-  const filepath = path.join(process.cwd(), "/pages", "/mdx/");
+  const filepath = path.join(process.cwd(), "/mdx/");
   let mdxPages = [];
 
   let allPages = getFiles(filepath);
@@ -11,8 +11,8 @@ export default (req, res) => {
     if (path.extname(p) === ".mdx") {
       mdxPages.push(path.basename(p, path.extname(p)));
     }
-    // const fileName = p.substring(p.lastIndexOf("/") + 1)
   });
+  // console.log(mdxPages);
   res.status(200).json(mdxPages);
 };
 

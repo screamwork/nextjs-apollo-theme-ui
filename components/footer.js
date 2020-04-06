@@ -15,7 +15,7 @@ export const Footer = () => {
         zIndex: -101,
         // backgroundColor: theme.myStyles.navBlack
         backgroundImage: `url(/images/bg-dark1.jpg)`,
-        backgroundRepeat: "repeat repeat"
+        backgroundRepeat: "repeat repeat",
       }}
     >
       <Box
@@ -23,13 +23,16 @@ export const Footer = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
-        <img
-          width="93"
-          height="93"
-          src="http://localhost/wordpressMU/avada/wp-content/uploads/sites/4/2016/06/avada-footer-logo.png"
+        <Box
+          sx={{
+            width: 93,
+            height: 93,
+            backgroundImage: `url(/images/gphoto.jpg)`,
+            backgroundRepeat: "no-repeat",
+          }}
         />
       </Box>
       <Box
@@ -37,7 +40,7 @@ export const Footer = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <Text py={2} sx={{ color: "whitesmoke" }}>
@@ -49,7 +52,7 @@ export const Footer = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <Box px={2}>

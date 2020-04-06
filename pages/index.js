@@ -15,19 +15,19 @@ const Home = (props) => {
         sx={{
           position: "relative",
           height: `100vh`,
-          overflow: "hidden"
+          overflow: "hidden",
         }}
       >
         <Box
           className="indexBackground"
           sx={{
             position: "fixed",
-            backgroundImage: `url(http://localhost/wordpressMU/avada/wp-content/uploads/sites/4/2020/03/134.jpg)`,
+            backgroundImage: `url(/images/crowd4.jpg)`,
             backgroundSize: "cover",
             height: "inherit",
             width: "100%",
             maxWidth: "100%",
-            zIndex: -100
+            zIndex: -100,
           }}
         />
       </Box>
@@ -57,51 +57,12 @@ const Home = (props) => {
       </div>
 
       <Box
-        className="github"
-        py={`${theme.space[5]}px`}
-        sx={{
-          flex: 1,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          minHeight: `100vh`,
-          backgroundColor: "whitesmoke"
-        }}
-      >
-        <Box
-          p={4}
-          sx={{ width: ["100%", "100%", "50%"], backgroundColor: "white" }}
-        >
-          <Heading as="h2" mb={3}>
-            Github repos!
-          </Heading>
-          {github.map((o, idx) => {
-            return (
-              <Box
-                p={2}
-                key={`${o.id}-${idx}`}
-                sx={{
-                  backgroundColor: idx % 2 === 0 ? "white" : "#efefef"
-                }}
-              >
-                <a
-                  href={o.html_url}
-                  target="_blank"
-                  style={{ display: "block" }}
-                >
-                  <Heading as="h4">{o.name}</Heading>
-                  <Text>{o.description}</Text>
-                </a>
-              </Box>
-            );
-          })}
-        </Box>
-      </Box>
-
-      <Box
         className="lastfm"
-        py={`${theme.space[5]}px`}
+        py={[
+          `${theme.space[5]}px`,
+          `${theme.space[5]}px`,
+          `${theme.space[5]}px`,
+        ]}
         sx={{
           flex: 1,
           display: "flex",
@@ -109,7 +70,7 @@ const Home = (props) => {
           justifyContent: "center",
           alignItems: "center",
           minHeight: `100vh`,
-          backgroundColor: "white"
+          backgroundColor: "rgba(255,255,255,.5)",
         }}
       >
         <Box
@@ -118,7 +79,16 @@ const Home = (props) => {
         >
           <Box>
             <Heading as="h2" mb={3}>
-              recent Lastfm!
+              <a href="http://last.fm/user/gung" target="_blank">
+                Lastfm
+              </a>{" "}
+              /{" "}
+              <a
+                href="https://open.spotify.com/user/1128845569?si=lpkYYRllTVCOrLiT56aOhQ"
+                target="_blank"
+              >
+                Spotify
+              </a>
             </Heading>
             <Grid
               p={4}
@@ -136,7 +106,7 @@ const Home = (props) => {
                       display: "flex",
                       flexDirection: "row",
                       alignItems: "center",
-                      justifyContent: "flex-start"
+                      justifyContent: "flex-start",
                     }}
                   >
                     <Box mr={2}>
@@ -157,6 +127,49 @@ const Home = (props) => {
               })}
             </Grid>
           </Box>
+        </Box>
+      </Box>
+
+      <Box
+        className="github"
+        py={`${theme.space[5]}px`}
+        sx={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: `100vh`,
+          backgroundColor: "whitesmoke",
+        }}
+      >
+        <Box
+          p={4}
+          sx={{ width: ["100%", "100%", "50%"], backgroundColor: "white" }}
+        >
+          <Heading as="h2" mb={3}>
+            Github repos!
+          </Heading>
+          {github.map((o, idx) => {
+            return (
+              <Box
+                p={2}
+                key={`${o.id}-${idx}`}
+                sx={{
+                  backgroundColor: idx % 2 === 0 ? "white" : "#efefef",
+                }}
+              >
+                <a
+                  href={o.html_url}
+                  target="_blank"
+                  style={{ display: "block" }}
+                >
+                  <Heading as="h4">{o.name}</Heading>
+                  <Text>{o.description}</Text>
+                </a>
+              </Box>
+            );
+          })}
         </Box>
       </Box>
 
@@ -254,7 +267,7 @@ Home.getInitialProps = async () => {
       // console.log(JSON.stringify(values[0].github, null, 2));
       return {
         github: values[0].github,
-        lastfm: values[1].lastfm
+        lastfm: values[1].lastfm,
       };
     })
     .catch((e) => {
@@ -264,108 +277,108 @@ Home.getInitialProps = async () => {
           {
             name: "repo1",
             description: "some desc",
-            html_url: "http://ffdsfdf.de"
+            html_url: "http://ffdsfdf.de",
           },
           {
             name: "repo1 with some examples about nextjs",
             description:
               "some desc goes here some desc goes here some desc goes here some desc goes here",
-            html_url: "http://ffdsfdf.de"
-          }
+            html_url: "http://ffdsfdf.de",
+          },
         ],
         lastfm: [
           {
             artist: {
               "mbid": "a6c6897a-7415-4f8d-b5a5-3a5e05f3be67",
-              "#text": "Twenty One Pilots"
+              "#text": "Twenty One Pilots",
             },
             album: {
               "mbid": "05c67876-38cc-4297-ad2b-754247d2ab83",
-              "#text": "Trench"
+              "#text": "Trench",
             },
             image: [
               {
                 "size": "small",
                 "#text":
-                  "https://lastfm.freetls.fastly.net/i/u/34s/f0b8e8b381c3530cede2993a5c133323.png"
-              }
+                  "https://lastfm.freetls.fastly.net/i/u/34s/f0b8e8b381c3530cede2993a5c133323.png",
+              },
             ],
             streamable: "0",
             date: {
               "uts": "1584321108",
-              "#text": "16 Mar 2020, 01:11"
+              "#text": "16 Mar 2020, 01:11",
             },
             url: "https://www.last.fm/music/Twenty+One+Pilots/_/Bandito",
             name: "Bandito",
-            mbid: "3aadb9b7-6c1c-4c6b-a8a8-384514748456"
+            mbid: "3aadb9b7-6c1c-4c6b-a8a8-384514748456",
           },
           {
             artist: {
               "mbid": "a6c6897a-7415-4f8d-b5a5-3a5e05f3be67",
-              "#text": "Twenty One Pilots"
+              "#text": "Twenty One Pilots",
             },
             album: {
               "mbid": "05c67876-38cc-4297-ad2b-754247d2ab83",
-              "#text": "Trench"
+              "#text": "Trench",
             },
             image: [
               {
                 "size": "small",
                 "#text":
-                  "https://lastfm.freetls.fastly.net/i/u/34s/f0b8e8b381c3530cede2993a5c133323.png"
-              }
+                  "https://lastfm.freetls.fastly.net/i/u/34s/f0b8e8b381c3530cede2993a5c133323.png",
+              },
             ],
             streamable: "0",
             date: {
               "uts": "1584320769",
-              "#text": "16 Mar 2020, 01:06"
+              "#text": "16 Mar 2020, 01:06",
             },
             url: "https://www.last.fm/music/Twenty+One+Pilots/_/Cut+My+Lip",
             name: "Cut My Lip",
-            mbid: "1393f50c-1dec-4bc8-915e-4a872e0e4b9f"
+            mbid: "1393f50c-1dec-4bc8-915e-4a872e0e4b9f",
           },
           {
             artist: {
               "mbid": "a6c6897a-7415-4f8d-b5a5-3a5e05f3be67",
-              "#text": "Twenty One Pilots"
+              "#text": "Twenty One Pilots",
             },
             album: {
               "mbid": "05c67876-38cc-4297-ad2b-754247d2ab83",
-              "#text": "Trench"
+              "#text": "Trench",
             },
             image: [
               {
                 "size": "small",
                 "#text":
-                  "https://lastfm.freetls.fastly.net/i/u/34s/f0b8e8b381c3530cede2993a5c133323.png"
+                  "https://lastfm.freetls.fastly.net/i/u/34s/f0b8e8b381c3530cede2993a5c133323.png",
               },
               {
                 "size": "medium",
                 "#text":
-                  "https://lastfm.freetls.fastly.net/i/u/64s/f0b8e8b381c3530cede2993a5c133323.png"
+                  "https://lastfm.freetls.fastly.net/i/u/64s/f0b8e8b381c3530cede2993a5c133323.png",
               },
               {
                 "size": "large",
                 "#text":
-                  "https://lastfm.freetls.fastly.net/i/u/174s/f0b8e8b381c3530cede2993a5c133323.png"
+                  "https://lastfm.freetls.fastly.net/i/u/174s/f0b8e8b381c3530cede2993a5c133323.png",
               },
               {
                 "size": "extralarge",
                 "#text":
-                  "https://lastfm.freetls.fastly.net/i/u/300x300/f0b8e8b381c3530cede2993a5c133323.png"
-              }
+                  "https://lastfm.freetls.fastly.net/i/u/300x300/f0b8e8b381c3530cede2993a5c133323.png",
+              },
             ],
             streamable: "0",
             date: {
               "uts": "1584320544",
-              "#text": "16 Mar 2020, 01:02"
+              "#text": "16 Mar 2020, 01:02",
             },
             url:
               "https://www.last.fm/music/Twenty+One+Pilots/_/Nico+and+the+Niners",
             name: "Nico and the Niners",
-            mbid: "153e7d14-83b5-48e7-948b-933aa7995119"
-          }
-        ]
+            mbid: "153e7d14-83b5-48e7-948b-933aa7995119",
+          },
+        ],
       };
     });
 };

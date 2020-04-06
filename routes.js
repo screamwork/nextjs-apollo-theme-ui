@@ -5,5 +5,5 @@ module.exports = routes()
   .add("index", "/")
   .add("posts", "/posts")
   .add("single", "/posts/:slug")
-  .add("mdxposts", "/mdxposts")
-  .add("mdx", "/mdx/:slug");
+  .add("mdxposts", "/mdxposts");
+// .add("mdx", "/mdx/:slug");
