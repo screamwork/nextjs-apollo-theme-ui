@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { FaBars, FaMinus, FaPlus, FaTimes } from "react-icons/fa";
 import { Box, useThemeUI } from "theme-ui";
-import { SocialIcons } from "./socialIcons";
+import { SocialIcons } from "./SocialIcons";
 
 export const Nav = () => {
   const [isSticky, setIsSticky] = React.useState(false);

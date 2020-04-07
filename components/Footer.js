@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Text, useThemeUI } from "theme-ui";
-import { SocialIcons } from "./socialIcons";
+import { SocialIcons } from "./SocialIcons";
 
 export const Footer = () => {
   const context = useThemeUI();

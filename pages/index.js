@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { Waypoint } from "react-waypoint";
 import { Box, Grid, Heading, Text, useThemeUI } from "theme-ui";
-import { Layout } from "./_layout";
+import { Layout } from "../components/Layout";
 
 const Home = (props) => {
   const context = useThemeUI();
