@@ -57,7 +57,10 @@ const Single = ({ post }) => {
             <img src={post.featuredImage.sourceUrl} height="150" />
           )}
           {isMdx(post) ? (
-            <ReactMarkdown source={Test} skipHtml={true} />
+            <ReactMarkdown
+              source={`### header test\nbro what a rush`}
+              skipHtml={true}
+            />
           ) : (
             <Box
               className="wp-content"

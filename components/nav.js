@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React from "react";
 import { FaBars, FaMinus, FaPlus, FaTimes } from "react-icons/fa";
-import { useThemeUI } from "theme-ui";
+import { Box, useThemeUI } from "theme-ui";
+import { SocialIcons } from "./socialIcons";
 
 export const Nav = () => {
   const [isSticky, setIsSticky] = React.useState(false);
@@ -48,9 +49,10 @@ export const Nav = () => {
     <>
       {showMenu && <Menu showMenu={showMenu} setShowMenu={setShowMenu} />}
       <Sidebar sidebarOpen={sidebarOpen} />
-      <div
+      <Box
         id="nav"
-        style={{
+        p={["25px", "25px", "25px 55px"]}
+        sx={{
           flex: 1,
           display: "flex",
           flexDirection: "row",
@@ -58,7 +60,6 @@ export const Nav = () => {
           alignItems: "center",
           backgroundColor: "rgba(11, 11, 11, .85)",
           maxWidth: "100%",
-          padding: "25px 25px 25px 55px",
           transition: "padding .15s ease-out, background-color .3s ease-out",
           zIndex: 1,
           position: "fixed",
@@ -82,9 +83,9 @@ export const Nav = () => {
         <div
           style={{
             flex: 1,
-            maxWidth: "150px",
+            maxWidth: "75px",
             display: "flex",
-            justifyContent: "space-evenly",
+            justifyContent: "space-between",
             zIndex: 5,
           }}
         >
@@ -115,7 +116,7 @@ export const Nav = () => {
             />
           )}
         </div>
-      </div>
+      </Box>
     </>
   );
 };
@@ -141,10 +142,10 @@ const linkStyle = {
 const NavHtml = ({ setShowMenu, showMenu }) => (
   <nav className="nav">
     <div>
-      <Link href="/posts">
+      <Link href="/wp-posts">
         <a style={linkStyle}>/POSTS</a>
       </Link>
-      <Link href="/mdxposts">
+      <Link href="/mdx-posts">
         <a style={linkStyle}>/MDXPOSTS</a>
       </Link>
     </div>
@@ -155,6 +156,17 @@ const NavHtml = ({ setShowMenu, showMenu }) => (
         </a>
       </div>
     ))}
+    <Box
+      mt={[4, 5, 5]}
+      pb={2}
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <SocialIcons />
+    </Box>
   </nav>
 );
 

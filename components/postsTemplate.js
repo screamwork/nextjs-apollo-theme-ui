@@ -20,7 +20,7 @@ export const PostsTemplate = ({ posts }) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
       }}
     >
       <Heading pb={5} as="h2" sx={{ fontSize: theme.fontSizes[6] }}>
@@ -38,18 +38,18 @@ export const PostsTemplate = ({ posts }) => {
                 "borderLeftStyle": "solid",
                 "borderLeftColor": "transparent",
                 "&:hover": {
-                  borderLeftColor: `${theme.colors.primary}`
-                }
+                  borderLeftColor: `${theme.colors.primary}`,
+                },
               }}
             >
-              <a href={`/posts/${first.slug}`}>
+              <a href={`/wp-posts/${first.slug}`}>
                 <Heading
                   as="h4"
                   sx={{
                     textTransform: "capitalize",
                     color: "#444",
                     textDecoration: "inherit",
-                    fontSize: theme.fontSizes[4]
+                    fontSize: theme.fontSizes[4],
                   }}
                 >
                   {first.title}
@@ -80,18 +80,18 @@ export const PostsTemplate = ({ posts }) => {
                 "borderLeftStyle": "solid",
                 "borderLeftColor": "transparent",
                 "&:hover": {
-                  borderLeftColor: `${theme.colors.primary}`
-                }
+                  borderLeftColor: `${theme.colors.primary}`,
+                },
               }}
             >
-              <a href={`/posts/${second.slug}`}>
+              <a href={`/wp-posts/${second.slug}`}>
                 <Heading
                   as="h4"
                   sx={{
                     textTransform: "capitalize",
                     color: "#444",
                     textDecoration: "inherit",
-                    fontSize: theme.fontSizes[4]
+                    fontSize: theme.fontSizes[4],
                   }}
                 >
                   {second.title}
@@ -128,15 +128,15 @@ export const PostsTemplate = ({ posts }) => {
                     "borderLeftStyle": "solid",
                     "borderLeftColor": "transparent",
                     "&:hover": {
-                      borderLeftColor: `${theme.colors.primary}`
-                    }
+                      borderLeftColor: `${theme.colors.primary}`,
+                    },
                   }}
                 >
                   <Box
                     className={`box`}
                     sx={{
                       display: "flex",
-                      flexDirection: "row"
+                      flexDirection: "row",
                     }}
                   >
                     {p?.featuredImage?.sourceUrl && (
@@ -146,19 +146,19 @@ export const PostsTemplate = ({ posts }) => {
                           objectFit: "cover",
                           width: `${150}px`,
                           height: `${100}px`,
-                          maxWidth: "100%"
+                          maxWidth: "100%",
                         }}
                       />
                     )}
                     <Box ml={[1, 1, 3]}>
-                      <a href={`/posts/${p.slug}`}>
+                      <a href={`/wp-posts/${p.slug}`}>
                         <Heading
                           as="h4"
                           sx={{
                             textTransform: "capitalize",
                             color: "#444",
                             textDecoration: "inherit",
-                            fontSize: theme.fontSizes[4]
+                            fontSize: theme.fontSizes[4],
                           }}
                         >
                           {p.title}
