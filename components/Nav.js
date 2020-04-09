@@ -143,10 +143,10 @@ const NavHtml = ({ setShowMenu, showMenu }) => (
   <nav className="nav">
     <div>
       <Link href="/wp-posts">
-        <a style={linkStyle}>/POSTS</a>
+        <a style={linkStyle}>/WP POSTS</a>
       </Link>
       <Link href="/mdx-posts">
-        <a style={linkStyle}>/MDXPOSTS</a>
+        <a style={linkStyle}>/MDX POSTS</a>
       </Link>
     </div>
     {links.map(({ key, href, label }) => (

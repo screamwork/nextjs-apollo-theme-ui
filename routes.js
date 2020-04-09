@@ -6,4 +6,3 @@ module.exports = routes()
   .add("wp-posts", "/wp-posts")
   .add("wp-single", "/wp-posts/:slug")
   .add("mdx-posts", "/mdx-posts");
-// .add("mdx", "/mdx/:slug");
