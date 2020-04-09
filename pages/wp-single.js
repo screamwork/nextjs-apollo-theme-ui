@@ -4,8 +4,8 @@ import { FaCalendarPlus } from "react-icons/fa";
 import ReactMarkdown from "react-markdown";
 import { Box, Heading, Text, useThemeUI } from "theme-ui";
 import { withApollo } from "../apollo";
+import { Layout } from "../components/Layout";
 import { postQuery } from "../graphql/queries/postQuery";
-import { Layout } from "./_layout";
 
 const Single = ({ post }) => {
   const context = useThemeUI();

@@ -2,7 +2,7 @@ import React from "react";
 import { useThemeUI } from "theme-ui";
 import { withApollo } from "../apollo";
 import { Layout } from "../components/Layout";
-import { PostsTemplate } from "../components/postsTemplate";
+import { WPPostsTemplate } from "../components/WPPostsTemplate";
 import { postsQuery } from "../graphql/queries/postsQuery";
 
 const Posts = ({ posts }) => {
@@ -12,7 +12,7 @@ const Posts = ({ posts }) => {
   console.log(JSON.stringify(theme, null, 2));
   return (
     <Layout>
-      <PostsTemplate posts={posts} />
+      <WPPostsTemplate posts={posts} title={`WP Posts`} />
     </Layout>
   );
 };
