@@ -1,9 +1,9 @@
 import React from "react";
 import { useThemeUI } from "theme-ui";
 import { withApollo } from "../apollo";
+import { Layout } from "../components/Layout";
 import { PostsTemplate } from "../components/postsTemplate";
 import { postsQuery } from "../graphql/queries/postsQuery";
-import { Layout } from "./_layout";
 
 const Posts = ({ posts }) => {
   const context = useThemeUI();
@@ -19,7 +19,7 @@ const Posts = ({ posts }) => {
 
 Posts.getInitialProps = async (context) => {
   const { data, loading, error } = await context.apolloClient.query({
-    query: postsQuery
+    query: postsQuery,
   });
 
   if (error) throw error;

@@ -7,7 +7,7 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { okaidia } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { Box, useThemeUI } from "theme-ui";
-import { Layout } from "../_layout";
+import { Layout } from "../../components/Layout";
 
 const CodeBlock = (props) => {
   const { language, value } = props;

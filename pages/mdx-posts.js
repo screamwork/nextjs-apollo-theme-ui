@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { Box, Heading, useThemeUI } from "theme-ui";
 import { withApollo } from "../apollo";
-import { Layout } from "./_layout";
+import { Layout } from "../components/Layout";
 
 const MdxPosts = ({ staticMdxPages }) => {
   const context = useThemeUI();
@@ -17,7 +17,7 @@ const MdxPosts = ({ staticMdxPages }) => {
           justifyContent: "center",
           alignItems: "center",
           minHeight: "100vh",
-          backgroundColor: "white"
+          backgroundColor: "white",
         }}
       >
         <Box p={5} sx={{ width: ["100%", "100%", "75%"] }}>
@@ -32,7 +32,7 @@ const MdxPosts = ({ staticMdxPages }) => {
                 textDecoration: "none",
                 paddingTop: 10,
                 paddingBottom: 10,
-                display: "block"
+                display: "block",
               }}
             >
               <Heading as="h4" mb={0} style={{ textTransform: "capitalize" }}>
