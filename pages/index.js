@@ -24,7 +24,7 @@ const Home = (props) => {
             position: "fixed",
             backgroundImage: `url(/images/crowd4.jpg)`,
             backgroundSize: "cover",
-            height: "inherit",
+            height: "100%",
             width: "100%",
             maxWidth: "100%",
             zIndex: -100,
@@ -33,11 +33,15 @@ const Home = (props) => {
       </Box>
       <div className="hero">
         <h1 className="title">Welcome to Next.js!</h1>
-        <p className="description">
-          To get started, edit <code>pages/index.js</code> and save to reload.
-        </p>
 
-        <div className="row">
+        <Box
+          sx={{
+            margin: "80px auto 40px",
+            display: "flex",
+            flexDirection: ["column", "column", "row"],
+            justifyContent: "space-between",
+          }}
+        >
           <a href="https://nextjs.org/docs" className="card">
             <h3>Documentation &rarr;</h3>
             <p>Learn more about Next.js in the documentation.</p>
@@ -53,7 +57,7 @@ const Home = (props) => {
             <h3>Examples &rarr;</h3>
             <p>Find other example boilerplates on the Next.js GitHub.</p>
           </a>
-        </div>
+        </Box>
       </div>
 
       <Box
@@ -74,7 +78,8 @@ const Home = (props) => {
         }}
       >
         <Box
-          p={4}
+          p={[2, 3, 4]}
+          py={4}
           sx={{ width: ["100%", "100%", "75%"], backgroundColor: "white" }}
         >
           <Box>
@@ -91,7 +96,7 @@ const Home = (props) => {
               </a>
             </Heading>
             <Grid
-              p={4}
+              p={[2, 3, 4]}
               gap={10}
               columns={[(1, "1fr"), (1, "1fr"), (2, "1fr 1fr")]}
               sx={{ backgroundColor: "whitesmoke" }}
@@ -105,7 +110,7 @@ const Home = (props) => {
                       backgroundColor: "white",
                       display: "flex",
                       flexDirection: "row",
-                      alignItems: "center",
+                      alignItems: "flex-start",
                       justifyContent: "flex-start",
                     }}
                   >
@@ -144,7 +149,7 @@ const Home = (props) => {
         }}
       >
         <Box
-          p={4}
+          p={[2, 3, 4]}
           sx={{ width: ["100%", "100%", "50%"], backgroundColor: "white" }}
         >
           <Heading as="h2" mb={3}>
@@ -207,21 +212,14 @@ const Home = (props) => {
         .description {
           text-align: center;
         }
-        .row {
-          margin: 80px auto 40px;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-        }
         .card {
           padding: 18px 18px 24px;
-          width: 220px;
+          width: 300px;
           text-align: left;
           text-decoration: none;
           color: #434343;
           border: 1px solid #9b9b9b;
-          margin-right: 15px;
-          margin-left: 15px;
+          margin-bottom: 15px;
         }
         .card:hover {
           border-color: #067df7;

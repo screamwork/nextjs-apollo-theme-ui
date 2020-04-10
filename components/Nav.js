@@ -59,7 +59,7 @@ export const Nav = () => {
       <Sidebar sidebarOpen={sidebarOpen} />
       <Box
         id="nav"
-        p={["25px", "25px", "25px 55px"]}
+        p={["7px 25px 7px 5px", "25px", "25px 55px"]}
         sx={{
           flex: 1,
           display: "flex",
@@ -96,7 +96,11 @@ export const Nav = () => {
                 as="h2"
                 sx={{
                   lineHeight: logoHeight,
-                  marginLeft: `${theme.space[3]}px`,
+                  marginLeft: [
+                    `${theme.space[2]}px`,
+                    `${theme.space[2]}px`,
+                    `${theme.space[3]}px`,
+                  ],
                   color: "whitesmoke",
                 }}
               >

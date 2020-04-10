@@ -66,11 +66,12 @@ const Tile = ({ src }) => {
             overlay: {
               backgroundColor: "whitesmoke", //"papayawhip",
               zIndex: 999,
-              top: `${theme.space[4]}px`,
-              left: `${theme.space[4]}px`,
-              right: `${theme.space[4]}px`,
-              bottom: `${theme.space[4]}px`,
+              // top: `${theme.space[4]}px`,
+              // left: `${theme.space[4]}px`,
+              // right: `${theme.space[4]}px`,
+              // bottom: `${theme.space[4]}px`,
               boxShadow: "4px 10px 10px rgba(22,22,22,.25)",
+              borderRadius: 5,
             },
             content: {
               color: "black",
@@ -78,6 +79,11 @@ const Tile = ({ src }) => {
               border: "none",
               overflow: "hidden",
               backgroundColor: "inherit",
+
+              top: `${theme.space[2]}px`,
+              left: `${theme.space[2]}px`,
+              right: `${theme.space[2]}px`,
+              bottom: `${theme.space[2]}px`,
             },
           }}
         >
@@ -90,14 +96,14 @@ const Tile = ({ src }) => {
           >
             <button
               onClick={() => setShowModal(false)}
-              style={{ marginBottom: `${theme.space[1]}px` }}
+              style={{ marginBottom: `${theme.space[1]}px`, padding: "10px 0" }}
             >
-              Close Modal
+              Close
             </button>
             <img
               src={`${src.replace(
                 /325([^?].)*/g,
-                `${width - 120}/${height - 130}`
+                `${width - 16}/${height - 16}`
               )}`}
               style={{
                 maxWidth: "100%",
@@ -130,6 +136,10 @@ class Masonry extends React.Component {
   componentDidMount() {
     this.onResize();
     window.addEventListener("resize", this.onResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.onResize);
   }
 
   getColumns(w) {

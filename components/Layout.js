@@ -6,7 +6,7 @@ import { Nav } from "./Nav";
 export const Layout = ({ children }) => {
   return (
     <>
-      <Box style={{ flex: 1, minHeight: "100vh", marginBottom: 249 }}>
+      <Box sx={{ flex: 1, minHeight: "100vh", marginBottom: [146, 191, 231] }}>
         <Nav />
         <Box className="main">{children}</Box>
       </Box>

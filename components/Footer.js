@@ -28,10 +28,11 @@ export const Footer = () => {
       >
         <Box
           sx={{
-            width: 93,
-            height: 93,
+            width: [35, 50, 75],
+            height: [35, 50, 75],
             backgroundImage: `url(/images/gphoto.jpg)`,
             backgroundRepeat: "no-repeat",
+            backgroundSize: "contain",
           }}
         />
       </Box>
@@ -43,7 +44,17 @@ export const Footer = () => {
           alignItems: "center",
         }}
       >
-        <Text py={2} sx={{ color: "whitesmoke" }}>
+        <Text
+          py={2}
+          sx={{
+            color: "whitesmoke",
+            fontSize: [
+              `${theme.fontSizes[0]}px`,
+              `${theme.fontSizes[1]}px`,
+              `${theme.fontSizes[2]}px`,
+            ],
+          }}
+        >
           © Copyright 2020 | All Rights Reserved | Powered by nextjs
         </Text>
       </Box>
