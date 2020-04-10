@@ -58,7 +58,7 @@ export const getStaticPaths = async () => {
     },
   }));
 
-  console.log("paths: ", paths);
+  // console.log("paths from [slug.js]: ", paths);
 
   return {
     paths,

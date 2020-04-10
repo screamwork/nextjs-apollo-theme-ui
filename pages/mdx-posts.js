@@ -4,7 +4,7 @@ import { Box, Heading, useThemeUI } from "theme-ui";
 import { withApollo } from "../apollo";
 import { Layout } from "../components/Layout";
 
-const MdxPosts = ({ staticMdxPages }) => {
+const MdxPosts = ({ data }) => {
   const context = useThemeUI();
   const { theme, colorMode, setColorMode } = context;
 
@@ -24,19 +24,19 @@ const MdxPosts = ({ staticMdxPages }) => {
           <Heading as="h2" mb={3}>
             MDX Posts Page!
           </Heading>
-          {staticMdxPages.map((p, index) => (
+          {data.map((p, index) => (
             <a
-              href={`/mdx/${p}`}
-              key={`${p}-${index}`}
+              href={`/mdx/${p.slug}`}
+              key={`${p.slug}-${index}`}
               style={{
                 textDecoration: "none",
-                paddingTop: 10,
-                paddingBottom: 10,
+                paddingTop: `${theme.space[2]}px`,
+                paddingBottom: `${theme.space[2]}px`,
                 display: "block",
               }}
             >
               <Heading as="h4" mb={0} style={{ textTransform: "capitalize" }}>
-                {p}
+                {`[${p.date}] ${p.title} - ${p.description}`}
               </Heading>
             </a>
           ))}
@@ -46,9 +46,18 @@ const MdxPosts = ({ staticMdxPages }) => {
   );
 };
 
+// MdxPosts.getInitialProps = async (context) => {
+//   const files = await axios.get("http://localhost:8080/api/mdxposts");
+//   return { staticMdxPages: files.data };
+// };
+
 MdxPosts.getInitialProps = async (context) => {
-  const files = await axios.get("http://localhost:8080/api/mdxposts");
-  return { staticMdxPages: files.data };
+  const { data } = await axios.get("http://localhost:8080/api/mdxposts");
+
+  return {
+    data,
+    fallback: false,
+  };
 };
 
 export default withApollo({ ssr: true })(MdxPosts);

@@ -1,14 +1,15 @@
 import React from "react";
+import { Box } from "theme-ui";
 import { Footer } from "./Footer";
 import { Nav } from "./Nav";
 
 export const Layout = ({ children }) => {
   return (
     <>
-      <div style={{ flex: 1, minHeight: "100vh", marginBottom: 249 }}>
+      <Box style={{ flex: 1, minHeight: "100vh", marginBottom: 249 }}>
         <Nav />
-        <div className="main">{children}</div>
-      </div>
+        <Box className="main">{children}</Box>
+      </Box>
       <Footer />
     </>
   );

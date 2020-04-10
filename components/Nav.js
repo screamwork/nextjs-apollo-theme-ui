@@ -1,7 +1,14 @@
+// @ts-check
 import Link from "next/link";
 import React from "react";
-import { FaBars, FaMinus, FaPlus, FaTimes } from "react-icons/fa";
-import { Box, useThemeUI } from "theme-ui";
+import {
+  FaBars,
+  FaExternalLinkAlt,
+  FaMinus,
+  FaPlus,
+  FaTimes,
+} from "react-icons/fa";
+import { Box, Flex, Heading, useThemeUI } from "theme-ui";
 import { SocialIcons } from "./SocialIcons";
 
 export const Nav = () => {
@@ -13,6 +20,7 @@ export const Nav = () => {
   let isMounted = true;
 
   const iconHeight = `1.5em`;
+  const logoHeight = `40px`;
 
   const handleSetIsSticky = React.useCallback((val) => {
     setIsSticky(val);
@@ -69,14 +77,32 @@ export const Nav = () => {
         }}
       >
         <Link href="/">
-          <a style={{ paddingTop: theme.space[1] }}>
-            <img
-              style={{
-                zIndex: 1,
-                height: 40,
-              }}
-              src="http://localhost/wordpressMU/avada/wp-content/uploads/sites/4/2016/06/avada-freelance-logo.png"
-            />
+          <a
+            style={{
+              padding: `${theme.space[2]}px`,
+              textDecoration: "none",
+            }}
+          >
+            <Flex>
+              <img
+                style={{
+                  zIndex: 1,
+                  height: logoHeight,
+                  borderRadius: 10,
+                }}
+                src="/images/gphoto.jpg"
+              />
+              <Heading
+                as="h2"
+                sx={{
+                  lineHeight: logoHeight,
+                  marginLeft: `${theme.space[3]}px`,
+                  color: "whitesmoke",
+                }}
+              >
+                Gu Ng
+              </Heading>
+            </Flex>
           </a>
         </Link>
 
@@ -121,17 +147,14 @@ export const Nav = () => {
   );
 };
 
-const links = [
-  { href: "https://zeit.co/now", label: "ZEIT" },
-  { href: "https://github.com/zeit/next.js", label: "GitHub" },
-].map((link) => {
+const links = [{ href: "https://zeit.co/now", label: "ZEIT" }].map((link) => {
   link.key = `nav-link-${link.href}-${link.label}`;
   return link;
 });
 
 const linkStyle = {
   fontFamily: "Lato, sans-serif",
-  fontSize: "28px",
+  fontSize: "24px",
   display: "block",
   padding: "5px 0",
   textDecoration: "none",
@@ -148,13 +171,23 @@ const NavHtml = ({ setShowMenu, showMenu }) => (
       <Link href="/mdx-posts">
         <a style={linkStyle}>/MDX POSTS</a>
       </Link>
+      <Link href="/masonry">
+        <a style={linkStyle}>/Masonry Unsplash</a>
+      </Link>
     </div>
     {links.map(({ key, href, label }) => (
-      <div key={key}>
+      <Box
+        key={key}
+        sx={{ display: "flex", alignItems: "center", flexDirection: "row" }}
+      >
         <a href={href} style={linkStyle} onClick={() => {}}>
           {`${label}`}
+          <FaExternalLinkAlt
+            size={16}
+            style={{ color: "crimson", marginLeft: `12px` }}
+          />
         </a>
-      </div>
+      </Box>
     ))}
     <Box
       mt={[4, 5, 5]}
@@ -190,12 +223,13 @@ const Menu = ({ setShowMenu, showMenu }) => (
 );
 
 const Sidebar = ({ sidebarOpen }) => (
-  <div
+  <Box
+    px={4}
     className="sidebar"
     style={{
       top: 0,
-      left: sidebarOpen ? 0 : -300,
-      width: 300,
+      left: sidebarOpen ? 0 : -320,
+      width: 320,
       height: "100vh",
       bottom: 0,
       position: "fixed",
@@ -208,5 +242,5 @@ const Sidebar = ({ sidebarOpen }) => (
     }}
   >
     <NavHtml />
-  </div>
+  </Box>
 );
