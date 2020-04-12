@@ -25,7 +25,8 @@ const Single = ({ post }) => {
     <Layout>
       <Box
         className="single-post"
-        pt={theme.space[7]}
+        mt={[70, 86, 86]}
+        pt={[theme.space[4], theme.space[5], theme.space[6]]}
         pb={theme.space[5]}
         sx={{
           flex: 1,
@@ -36,12 +37,12 @@ const Single = ({ post }) => {
         }}
       >
         <Box
-          p={[4, 4, 4]}
+          p={[2, 3, 0]}
           sx={{ width: ["100%", "100%", "75%"], maxWidth: "100%" }}
         >
           <Heading
             as="h2"
-            mb={2}
+            my={theme.space[4]}
             sx={{ textTransform: "capitalize", fontSize: theme.fontSizes[6] }}
           >
             {post.title}

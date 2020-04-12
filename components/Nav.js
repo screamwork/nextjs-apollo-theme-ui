@@ -57,12 +57,11 @@ export const Nav = () => {
     <>
       {showMenu && <Menu showMenu={showMenu} setShowMenu={setShowMenu} />}
       <Sidebar sidebarOpen={sidebarOpen} />
-      <Box
+      <Flex
         id="nav"
-        p={["7px 25px 7px 5px", "25px", "25px 55px"]}
+        p={["7px 25px 7px 5px", "15px 25px 15px 5px", "15px 55px 15px 35px"]}
         sx={{
           flex: 1,
-          display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
@@ -110,11 +109,10 @@ export const Nav = () => {
           </a>
         </Link>
 
-        <div
-          style={{
+        <Flex
+          sx={{
             flex: 1,
             maxWidth: "75px",
-            display: "flex",
             justifyContent: "space-between",
             zIndex: 5,
           }}
@@ -145,8 +143,8 @@ export const Nav = () => {
               color={"whiteSmoke"}
             />
           )}
-        </div>
-      </Box>
+        </Flex>
+      </Flex>
     </>
   );
 };
@@ -218,7 +216,7 @@ const Menu = ({ setShowMenu, showMenu }) => (
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      backgroundColor: "#20232c",
+      backgroundColor: "rgba(32, 35, 44,.95)",
       zIndex: 1,
     }}
   >

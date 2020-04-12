@@ -6,7 +6,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { okaidia } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import { Box, useThemeUI } from "theme-ui";
+import { Box, Flex, useThemeUI } from "theme-ui";
 import { Layout } from "../../components/Layout";
 
 const CodeBlock = (props) => {
@@ -24,27 +24,27 @@ export default ({ mdxContent, data }) => {
 
   return (
     <Layout>
-      <Box
+      <Flex
         className="mdxpage"
-        pt={theme.space[7]}
+        mt={[70, 70, 86]}
+        pt={[theme.space[4], theme.space[5], theme.space[6]]}
         pb={theme.space[5]}
         sx={{
           flex: 1,
-          display: "flex",
           justifyContent: "center",
           alignItems: "center",
           minHeight: "100vh",
           backgroundColor: "white",
         }}
       >
-        <Box p={[2, 3, 4]} sx={{ width: ["100%", "100%", "50%"] }}>
+        <Box p={[2, 3, 0]} sx={{ width: ["100%", "100%", "66%"] }}>
           <Head>
             <title>{data.title}</title>
             <meta title="description" content={data.description} />
           </Head>
           <ReactMarkdown source={mdxContent} renderers={{ code: CodeBlock }} />
         </Box>
-      </Box>
+      </Flex>
     </Layout>
   );
 };
@@ -57,8 +57,6 @@ export const getStaticPaths = async () => {
       slug: filename.replace(".mdx", ""),
     },
   }));
-
-  // console.log("paths from [slug.js]: ", paths);
 
   return {
     paths,

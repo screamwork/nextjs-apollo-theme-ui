@@ -6,19 +6,6 @@ html {
   padding: 0;
 }
 
-body {
-  font-family: "Source Sans Pro", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Lato", sans-serif;
-}
-
 .sidebar a {
   padding: 15px 0;
   display: block;
@@ -61,4 +48,17 @@ blockquote {
   max-width: 100%;
   width: 100%;
   object-fit: contain;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
 }

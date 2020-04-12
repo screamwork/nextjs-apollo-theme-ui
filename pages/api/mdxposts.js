@@ -12,7 +12,7 @@ export default (req, res) => {
       .toString();
 
     const parsedMarkdown = matter(markdownWithMetadata);
-    console.log(parsedMarkdown.data);
+    // console.log(parsedMarkdown.data);
 
     return {
       date: parsedMarkdown.data.date,

@@ -9,21 +9,25 @@ export const WPPostsTemplate = ({ posts, title }) => {
   const second = posts[1];
 
   return (
-    <Box
+    <Flex
       className="postTemplate"
-      py={6}
-      mt={75}
+      pt={[theme.space[4], theme.space[5], theme.space[6]]}
+      pb={5}
+      mt={[70, 86, 86]}
       sx={{
         flex: 1,
         minHeight: "100vh",
         backgroundColor: "whitesmoke",
-        display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <Heading pb={5} as="h2" sx={{ fontSize: theme.fontSizes[6] }}>
+      <Heading
+        my={theme.space[4]}
+        as="h2"
+        sx={{ fontSize: theme.fontSizes[6] }}
+      >
         {title}
       </Heading>
       <Box sx={{ width: ["100%", "100%", "75%"] }}>
@@ -181,6 +185,6 @@ export const WPPostsTemplate = ({ posts, title }) => {
         </Flex>
       </Box>
       <style jsx>{``}</style>
-    </Box>
+    </Flex>
   );
 };

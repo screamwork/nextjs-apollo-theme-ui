@@ -4,22 +4,17 @@ import ReactModal from "react-modal";
 import { Box, Heading, useThemeUI } from "theme-ui";
 import { Layout } from "../components/Layout";
 
-let brakePoints = [420, 728, 832];
-let images = [];
-const imgId = [1011, 883, 776, 823, 64, 65, 839, 314, 256, 316, 92, 643];
-for (let i = 0; i < imgId.length; i++) {
-  const ih = 200 + Math.floor(Math.random() * 10) * 15;
-  images.push("https://unsplash.it/325/" + ih + "?image=" + imgId[i]);
-}
+let brakePoints = [640, 768, 1024, 1280];
 
-export default () => {
+const X = ({ images }) => {
   const context = useThemeUI();
   const { theme, colorMode, setColorMode } = context;
 
   return (
     <Layout>
       <Box
-        pt={theme.space[7]}
+        mt={[70, 86, 86]}
+        pt={[theme.space[4], theme.space[5], theme.space[6]]}
         pb={theme.space[5]}
         style={{
           display: "flex",
@@ -49,6 +44,18 @@ export default () => {
   );
 };
 
+X.getInitialProps = async (context) => {
+  let images = [];
+  const imgId = [1011, 883, 776, 823, 64, 65, 839, 314, 256, 316, 92, 643];
+  for (let i = 0; i < imgId.length; i++) {
+    const ih = 200 + Math.floor(Math.random() * 10) * 15;
+    images.push("https://unsplash.it/325/" + ih + "?image=" + imgId[i]);
+  }
+  return { images };
+};
+
+export default X;
+
 const Tile = ({ src }) => {
   const context = useThemeUI();
   const { theme, colorMode, setColorMode } = context;
@@ -60,6 +67,7 @@ const Tile = ({ src }) => {
       <Box p={2}>
         <img src={src} onClick={() => setShowModal(true)} />
         <ReactModal
+          closeTimeoutMS={300}
           ariaHideApp={false}
           isOpen={showModal}
           style={{
