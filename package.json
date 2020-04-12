@@ -17,9 +17,7 @@
     "@theme-ui/prism": "^0.3.0",
     "@theme-ui/typography": "^0.3.0",
     "add": "^2.0.6",
-    "apollo-cache-inmemory": "^1.6.5",
     "apollo-client": "^2.6.8",
-    "apollo-link-http": "^1.5.16",
     "apollo-server-micro": "^2.11.0",
     "axios": "^0.19.2",
     "deepmerge": "^4.2.2",
@@ -31,7 +29,6 @@
     "gray-matter": "^4.0.2",
     "isomorphic-unfetch": "^3.0.0",
     "marked": "^0.8.2",
-    "merge-graphql-schemas": "^1.7.6",
     "moment-timezone": "^0.5.28",
     "next": "9.3.0",
     "next-routes": "^1.4.2",
@@ -46,7 +43,6 @@
     "react-waypoint": "^9.0.2",
     "readdirp": "^3.4.0",
     "theme-ui": "^0.3.1",
-    "typography-theme-wordpress-2012": "^0.16.19",
     "yarn": "^1.22.4"
   },
   "devDependencies": {}

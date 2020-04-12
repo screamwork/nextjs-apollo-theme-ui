@@ -46,13 +46,8 @@ const MdxPosts = ({ data }) => {
   );
 };
 
-// MdxPosts.getInitialProps = async (context) => {
-//   const files = await axios.get("http://localhost:8080/api/mdxposts");
-//   return { staticMdxPages: files.data };
-// };
-
 MdxPosts.getInitialProps = async (context) => {
-  const { data } = await axios.get("http://localhost:8080/api/mdxposts");
+  const { data } = await axios.get(`${process.env.SERVER_URL}/api/mdxposts`);
 
   return {
     data,
