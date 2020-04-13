@@ -17,18 +17,6 @@ html {
   background-color: rgb(32, 36, 44) !important;
 }
 
-.github a,
-.lastfm a {
-  text-decoration: none;
-  color: black;
-  text-transform: capitalize;
-  transition: all 0.1s ease-in-out;
-}
-.github a:hover,
-.lastfm a:hover {
-  color: #444;
-}
-
 .single-post img {
   max-width: 100%;
 }

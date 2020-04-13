@@ -30,8 +30,8 @@ export const WPPostsTemplate = ({ posts, title }) => {
       >
         {title}
       </Heading>
-      <Box sx={{ width: ["100%", "100%", "75%"] }}>
-        <Flex sx={{ flexDirection: ["column", "column", "row"] }}>
+      <Box sx={{ width: ["100%", "100%", "100%", "75%"] }}>
+        <Flex sx={{ flexDirection: ["column", "column", "column", "row"] }}>
           <Box sx={{ flex: 1 }}>
             <Box
               className="box"

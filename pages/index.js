@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import { FaGithub } from "react-icons/fa";
 import { Waypoint } from "react-waypoint";
 import { Box, Flex, Grid, Heading, Link, Text, useThemeUI } from "theme-ui";
 import { Layout } from "../components/Layout";
@@ -30,7 +31,7 @@ const Home = (props) => {
           className="indexBackground"
           sx={{
             position: "fixed",
-            backgroundImage: `url(/images/crowd4.jpg)`,
+            backgroundImage: `url(${require("../public/images/crowd4.jpg")})`,
             backgroundSize: "cover",
             height: "100%",
             width: "100%",
@@ -140,7 +141,7 @@ const Home = (props) => {
                             <img
                               // mr={`${theme.space[2]}px`}
                               style={{ marginRight: theme.space[2] }}
-                              src="/images/now_playing.gif"
+                              src={`${require("../public/images/now_playing.gif")}`}
                             />
                           )}
                           {o.name}
@@ -174,15 +175,20 @@ const Home = (props) => {
           justifyContent: "center",
           alignItems: "center",
           minHeight: `100vh`,
-          backgroundColor: "whitesmoke",
+          backgroundColor: "#111",
         }}
       >
         <Box
           p={[2, 2, 3, 3]}
-          sx={{ width: ["100%", "100%", "50%"], backgroundColor: "white" }}
+          sx={{ width: ["100%", "100%", "50%"], backgroundColor: "#222" }}
         >
           <Heading as="h2" mb={3}>
-            Github repos!
+            <Flex sx={{ alignItems: "center" }}>
+              <FaGithub size={`1em`} color={"crimson"} />
+              <Text ml={[1, 1, 2, 2]} sx={{ color: "whitesmoke" }}>
+                Github repos!
+              </Text>
+            </Flex>
           </Heading>
           {github.map((o, idx) => {
             return (
@@ -190,14 +196,21 @@ const Home = (props) => {
                 p={(2, 2, 2, 2)}
                 key={`${o.id}-${idx}`}
                 sx={{
-                  backgroundColor: idx % 2 === 0 ? "white" : "#efefef",
+                  backgroundColor: idx % 2 === 0 ? "#333" : "#222",
                 }}
               >
                 <Link href={o.html_url} target="_blank">
-                  <Heading as="h4" sx={{ color: "crimson" }}>
-                    {o.name}
+                  <Heading
+                    as="h4"
+                    sx={{
+                      "color": "crimson",
+                      "fontFamily": "Menlo, monospace",
+                      ":hover": { textDecoration: "underline" },
+                    }}
+                  >
+                    {`> ${o.name}`}
                   </Heading>
-                  <Text>{o.description}</Text>
+                  <Text sx={{ color: "whitesmoke" }}>{o.description}</Text>
                 </Link>
               </Box>
             );
@@ -268,7 +281,7 @@ const Home = (props) => {
 
 Home.getInitialProps = async () => {
   return axios
-    .get(`${process.env.SERVER_URL}/api/getData_home`)
+    .get(`${process.env.SERVER_URL}/api/rest/getData_home`)
     .then((res) => res.data)
     .catch((e) => {
       console.log(JSON.stringify(e, null, 2));

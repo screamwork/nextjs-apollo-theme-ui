@@ -2,7 +2,7 @@ import { MDXProvider } from "@mdx-js/react";
 import Prism from "@theme-ui/prism";
 import React from "react";
 import { ThemeProvider } from "theme-ui";
-import "../styles.css";
+import "../styles.scss";
 import theme from "../theme";
 
 const components = {

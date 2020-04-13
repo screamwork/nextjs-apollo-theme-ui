@@ -47,7 +47,9 @@ const MdxPosts = ({ data }) => {
 };
 
 MdxPosts.getInitialProps = async (context) => {
-  const { data } = await axios.get(`${process.env.SERVER_URL}/api/mdxposts`);
+  const { data } = await axios.get(
+    `${process.env.SERVER_URL}/api/rest/mdxposts`
+  );
 
   return {
     data,

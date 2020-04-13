@@ -1,7 +1,7 @@
 // @ts-check
 import axios from "axios";
-import GithubDummy from "../../json/github.json";
-import LastfmDummy from "../../json/lastfm.json";
+import GithubDummy from "../../../json/github.json";
+import LastfmDummy from "../../../json/lastfm.json";
 
 let cache = {
   time: null,

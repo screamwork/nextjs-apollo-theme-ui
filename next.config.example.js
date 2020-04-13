@@ -1,7 +1,12 @@
+const withPlugins = require("next-compose-plugins");
+const withSass = require("@zeit/next-sass");
+const withImages = require("next-images");
+
 const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
 });
-module.exports = withMDX({
+
+const nextConfig = {
   pageExtensions: ["mdx", "js", "jsx", "md"],
   // useFileSystemPublicRoutes: false,
   target: "server",
@@ -25,4 +30,6 @@ module.exports = withMDX({
     socialBitbucket: "#",
     socialGithub: "#",
   },
-});
+};
+
+module.exports = withPlugins([withMDX, withSass, withImages], nextConfig);

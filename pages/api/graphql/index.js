@@ -1,21 +1,10 @@
 import { ApolloServer } from "apollo-server-micro";
-import gql from "graphql-tag";
-// import { genSchema } from "../../genSchema";
+import { resolvers } from "./resolvers";
+import { typeDefs } from "./typeDefs";
 
-const typeDefs = gql`
-  type Query {
-    hello: String!
-  }
-`;
-
-const resolvers = {
-  Query: {
-    hello: async (_parent, _args, _context) => "Hello!"
-  }
-};
+const Graphql_Path = "/api/graphql";
 
 const apolloServer = new ApolloServer({
-  // schema: genSchema(),
   typeDefs,
   resolvers,
   debug: true,
@@ -34,17 +23,17 @@ const apolloServer = new ApolloServer({
     url: req ? req.protocol + "://" + req.get("host") : false,
     // session: req ? req.session : false,
     req,
-    res
+    res,
     // pubsub
-  })
+  }),
 });
 
-const handler = apolloServer.createHandler({ path: "/api/graphql" });
+const handler = apolloServer.createHandler({ path: Graphql_Path });
 
 export const config = {
   api: {
-    bodyParser: false
-  }
+    bodyParser: false,
+  },
 };
 
 export default handler;
