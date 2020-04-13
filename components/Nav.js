@@ -86,7 +86,7 @@ export const Nav = () => {
               <img
                 style={{
                   zIndex: 1,
-                  height: logoHeight,
+                  width: logoHeight,
                   borderRadius: 10,
                 }}
                 src="/images/gphoto.jpg"

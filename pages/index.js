@@ -140,7 +140,10 @@ const Home = (props) => {
                           {"@attr" in o && (
                             <img
                               // mr={`${theme.space[2]}px`}
-                              style={{ marginRight: theme.space[2] }}
+                              style={{
+                                marginRight: theme.space[2],
+                                width: "16px",
+                              }}
                               src={`${require("../public/images/now_playing.gif")}`}
                             />
                           )}

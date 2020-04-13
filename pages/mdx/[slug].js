@@ -32,7 +32,7 @@ export default ({ mdxContent, data }) => {
         sx={{
           flex: 1,
           justifyContent: "center",
-          alignItems: "center",
+          // alignItems: "center",
           minHeight: "100vh",
           backgroundColor: "white",
         }}
@@ -42,7 +42,11 @@ export default ({ mdxContent, data }) => {
             <title>{data.title}</title>
             <meta title="description" content={data.description} />
           </Head>
-          <ReactMarkdown source={mdxContent} renderers={{ code: CodeBlock }} />
+          <ReactMarkdown
+            source={mdxContent}
+            renderers={{ code: CodeBlock }}
+            linkTarget="_blank"
+          />
         </Box>
       </Flex>
     </Layout>
