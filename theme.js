@@ -124,9 +124,8 @@ export default () => {
         lineHeight: "body",
         color: "text",
         a: {
-          textDecoration: "none",
-          color: "#333",
-          transition: "all .25s ease-in",
+          textDecoration: "underline",
+          color: "secondary",
         },
         h1: {
           fontSize: 5,
@@ -170,7 +169,6 @@ export default () => {
           marginBottom: "space[3]",
         },
         img: {
-          width: "100%",
           maxHeight: "450px",
           maxWidth: "100%",
           objectFit: "cover",

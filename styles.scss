@@ -5,6 +5,9 @@ html {
   margin: 0;
   padding: 0;
 }
+img {
+  max-width: 100%;
+}
 
 .sidebar a {
   padding: 15px 0;
@@ -17,9 +20,6 @@ html {
   background-color: rgb(32, 36, 44) !important;
 }
 
-.single-post img {
-  max-width: 100%;
-}
 .postTemplate .right img {
   width: 150px;
   height: 100px;
@@ -30,12 +30,6 @@ blockquote {
   padding-left: 20px;
   margin-left: 0;
   border-left: 3px solid crimson;
-}
-
-.mdxpage img {
-  max-width: 100%;
-  width: 100%;
-  object-fit: contain;
 }
 
 .ReactModal__Overlay {

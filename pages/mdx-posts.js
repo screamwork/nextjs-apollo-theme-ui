@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
-import { Box, Heading, useThemeUI } from "theme-ui";
+import { FaCalendarTimes } from "react-icons/fa";
+import { Box, Heading, Text, useThemeUI } from "theme-ui";
 import { withApollo } from "../apollo";
 import { Layout } from "../components/Layout";
 
@@ -20,25 +21,58 @@ const MdxPosts = ({ data }) => {
           backgroundColor: "white",
         }}
       >
-        <Box p={5} sx={{ width: ["100%", "100%", "75%"] }}>
-          <Heading as="h2" mb={3}>
+        <Box
+          p={5}
+          sx={{ width: ["100%", "100%", "75%"] }}
+          mb={[
+            `${theme.space[2]}px`,
+            `${theme.space[2]}px`,
+            `${theme.space[4]}px`,
+            `${theme.space[4]}px`,
+          ]}
+        >
+          <Heading as="h2" my={4}>
             MDX Posts Page!
           </Heading>
           {data.map((p, index) => (
-            <a
-              href={`/mdx/${p.slug}`}
+            <Box
               key={`${p.slug}-${index}`}
-              style={{
-                textDecoration: "none",
-                paddingTop: `${theme.space[2]}px`,
-                paddingBottom: `${theme.space[2]}px`,
-                display: "block",
+              sx={{
+                display: "flex",
+                flexDirection: ["column", "column", "column", "column"],
+                alignItems: "flex-start",
+                justifyContent: "flex-start",
               }}
+              mb={[
+                `${theme.space[3]}px`,
+                `${theme.space[3]}px`,
+                `${theme.space[3]}px`,
+                `${theme.space[3]}px`,
+              ]}
             >
-              <Heading as="h4" mb={0} style={{ textTransform: "capitalize" }}>
-                {`[${p.date}] ${p.title} - ${p.description}`}
+              <Heading as="h5" mb={3} sx={{ color: "lightgrey" }}>
+                <FaCalendarTimes
+                  size={`.9em`}
+                  color={"lightgrey"}
+                  style={{ marginRight: "7px" }}
+                />
+                {`${p.date}`}
               </Heading>
-            </a>
+              <Box>
+                <Heading as="h3" mb={2} style={{ textTransform: "capitalize" }}>
+                  <a
+                    href={`/mdx/${p.slug}`}
+                    style={{
+                      textDecoration: "none",
+                      display: "block",
+                    }}
+                  >
+                    {`${p.title}`}
+                  </a>
+                </Heading>
+                <Text mb={[2, 2, 4, 4]}>{`${p.description}`}</Text>
+              </Box>
+            </Box>
           ))}
         </Box>
       </Box>
