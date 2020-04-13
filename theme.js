@@ -124,7 +124,7 @@ export default () => {
         lineHeight: "body",
         color: "text",
         a: {
-          textDecoration: "underline",
+          textDecoration: "none",
           color: "secondary",
         },
         h1: {

@@ -50,10 +50,10 @@ const MdxPosts = ({ data }) => {
                 `${theme.space[3]}px`,
               ]}
             >
-              <Heading as="h5" mb={3} sx={{ color: "lightgrey" }}>
+              <Heading as="h5" mb={3} sx={{ color: "grey" }}>
                 <FaCalendarTimes
                   size={`.9em`}
-                  color={"lightgrey"}
+                  color={"grey"}
                   style={{ marginRight: "7px" }}
                 />
                 {`${p.date}`}
