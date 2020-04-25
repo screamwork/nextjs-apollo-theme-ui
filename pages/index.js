@@ -248,7 +248,7 @@ const Home = (props) => {
 
 Home.getInitialProps = async () => {
   return axios
-    .get(`${process.env.SERVER_URL}/api/rest/getDataHome`)
+    .get(`${process.env.SERVER_URL}/api/rest/home/getData`)
     .then((res) => res.data)
     .catch((e) => {
       console.log(JSON.stringify(e, null, 2));
