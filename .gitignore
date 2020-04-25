@@ -19,6 +19,7 @@
 .DS_Store
 .env*
 next.config.js
+knexfile.js
 
 # debug
 npm-debug.log*

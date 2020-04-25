@@ -1,7 +1,6 @@
-var url = require("url");
-var fs = require("fs");
-var path = require("path");
+import fs from "fs";
 import matter from "gray-matter";
+import path from "path";
 
 export default (req, res) => {
   const files = fs.readdirSync(path.join(process.cwd(), "mdx"));
@@ -23,6 +22,14 @@ export default (req, res) => {
       image: parsedMarkdown.data.image || null,
     };
   });
+
+  data.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    // !!!
+    return dateA < dateB ? 1 : dateA > dateB ? -1 : 0;
+  });
+
   res.status(200).json(data || null);
 };
 

@@ -44,3 +44,25 @@ blockquote {
 .ReactModal__Overlay--before-close {
   opacity: 0;
 }
+
+.paginator {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  a {
+    padding: 2px 8px;
+    color: ghostwhite !important;
+    font-size: 18px;
+    margin-right: 10px;
+    :hover {
+      color: lightgrey !important;
+      text-decoration: underline;
+    }
+  }
+  .paginator-current {
+    color: lightgrey !important;
+    border-bottom: 1px solid ghostwhite;
+    border-width: 2px;
+  }
+}

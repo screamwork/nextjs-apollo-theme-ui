@@ -36,7 +36,7 @@ export const WPPostsTemplate = ({ posts, title }) => {
             <Box
               className="box"
               className="left"
-              p={[1, 2, 4]}
+              p={[2, 2, 4, 4]}
               sx={{
                 "borderLeftWidth": "3px",
                 "borderLeftStyle": "solid",
@@ -46,7 +46,7 @@ export const WPPostsTemplate = ({ posts, title }) => {
                 },
               }}
             >
-              <a href={`/wp-posts/${first.slug}`}>
+              <a href={`/wp/${first.slug}`}>
                 <Heading
                   as="h4"
                   sx={{
@@ -88,7 +88,7 @@ export const WPPostsTemplate = ({ posts, title }) => {
                 },
               }}
             >
-              <a href={`/wp-posts/${second.slug}`}>
+              <a href={`/wp/${second.slug}`}>
                 <Heading
                   as="h4"
                   sx={{
@@ -155,7 +155,7 @@ export const WPPostsTemplate = ({ posts, title }) => {
                       />
                     )}
                     <Box ml={[1, 1, 3]}>
-                      <a href={`/wp-posts/${p.slug}`}>
+                      <a href={`/wp/${p.slug}`}>
                         <Heading
                           as="h4"
                           sx={{

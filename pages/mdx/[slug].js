@@ -9,6 +9,17 @@ import { okaidia } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { Box, Flex, useThemeUI } from "theme-ui";
 import { Layout } from "../../components/Layout";
 
+const Img = (props) => {
+  const { alt, src } = props;
+  return (
+    <img
+      src={`${src}`}
+      alt={`${alt}`}
+      style={{ maxHeight: "400px", maxWidth: "100%", objectFit: "cover" }}
+    />
+  );
+};
+
 const CodeBlock = (props) => {
   const { language, value } = props;
   return (
@@ -26,8 +37,8 @@ export default ({ mdxContent, data }) => {
     <Layout>
       <Flex
         className="mdxpage"
-        mt={[70, 70, 86]}
-        pt={[theme.space[4], theme.space[5], theme.space[6]]}
+        mt={[70, 70, 86, 86]}
+        pt={[theme.space[4], theme.space[5], theme.space[5], theme.space[6]]}
         pb={theme.space[5]}
         sx={{
           flex: 1,
@@ -37,14 +48,14 @@ export default ({ mdxContent, data }) => {
           backgroundColor: "white",
         }}
       >
-        <Box p={[2, 3, 0]} sx={{ width: ["100%", "100%", "66%"] }}>
+        <Box p={[2, 3, 3, 0]} sx={{ width: ["100%", "100%", "100%", "60%"] }}>
           <Head>
             <title>{data.title}</title>
             <meta title="description" content={data.description} />
           </Head>
           <ReactMarkdown
             source={mdxContent}
-            renderers={{ code: CodeBlock }}
+            renderers={{ code: CodeBlock, image: Img }}
             linkTarget="_blank"
           />
         </Box>

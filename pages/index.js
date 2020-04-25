@@ -59,13 +59,20 @@ const Home = (props) => {
         >
           <Box mb={3}>
             <Flex sx={{ alignItems: "center" }}>
-              <FaLastfm size={`1.1em`} color={"crimson"} />
+              <FaLastfm size={`1.1em`} color={"whitesmoke"} />
               <Link
                 href={`${process.env.lastfmUrl}`}
                 target="_blank"
                 sx={{ color: "crimson", marginLeft: "7px" }}
               >
-                <Heading as="h2" mb={0} sx={{ color: "crimson" }}>
+                <Heading
+                  as="h2"
+                  mb={0}
+                  sx={{
+                    "color": "crimson",
+                    ":hover": { textDecoration: "underline" },
+                  }}
+                >
                   Last.fm
                 </Heading>
               </Link>
@@ -82,13 +89,20 @@ const Home = (props) => {
                 &middot;{" "}
               </Text>
 
-              <FaSpotify size={`1.1em`} color={"crimson"} />
+              <FaSpotify size={`1.1em`} color={"whitesmoke"} />
               <Link
                 href={`${process.env.spotifyUrl}`}
                 target="_blank"
                 sx={{ color: "crimson", marginLeft: "7px" }}
               >
-                <Heading as="h2" mb={0} sx={{ color: "crimson" }}>
+                <Heading
+                  as="h2"
+                  mb={0}
+                  sx={{
+                    "color": "crimson",
+                    ":hover": { textDecoration: "underline" },
+                  }}
+                >
                   Spotify
                 </Heading>
               </Link>
@@ -100,7 +114,7 @@ const Home = (props) => {
                 <Box
                   key={`${o.mbid}-${idx}`}
                   sx={{
-                    backgroundColor: "#444",
+                    backgroundColor: "#333",
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "flex-start",
@@ -234,7 +248,7 @@ const Home = (props) => {
 
 Home.getInitialProps = async () => {
   return axios
-    .get(`${process.env.SERVER_URL}/api/rest/getData_home`)
+    .get(`${process.env.SERVER_URL}/api/rest/getDataHome`)
     .then((res) => res.data)
     .catch((e) => {
       console.log(JSON.stringify(e, null, 2));

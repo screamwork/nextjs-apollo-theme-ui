@@ -1,16 +1,18 @@
+// @ts-check
 import moment from "moment-timezone";
 import React from "react";
 import { FaCalendarPlus } from "react-icons/fa";
 import ReactMarkdown from "react-markdown";
 import { Box, Heading, Text, useThemeUI } from "theme-ui";
-import { withApollo } from "../apollo";
-import { Layout } from "../components/Layout";
-import { postQuery } from "../graphql/queries/postQuery";
+import { createApolloClient } from "../../apolloClient";
+import { Layout } from "../../components/Layout";
+import { postQuery } from "../../graphql/queries/postQuery";
+import { postsQuery } from "../../graphql/queries/postsQuery";
 
 const Single = ({ post }) => {
   const context = useThemeUI();
   const { theme, colorMode, setColorMode } = context;
-  console.log(JSON.stringify(theme, null, 2));
+  // console.log(JSON.stringify(theme, null, 2));
 
   const isMdx = (post) => {
     if (!post?.tags?.nodes?.length) {
@@ -76,9 +78,31 @@ const Single = ({ post }) => {
   );
 };
 
-Single.getInitialProps = async (context) => {
-  const slug = context.query.slug;
-  const { data, loading, error } = await context.apolloClient.query({
+export const getStaticPaths = async () => {
+  const { data, loading, error } = await createApolloClient().query({
+    query: postsQuery,
+  });
+
+  if (error) throw error;
+  if (loading) return;
+
+  const paths = data.posts.nodes.map((p) => ({
+    params: {
+      slug: p.slug,
+    },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async (context) => {
+  // console.log(context);
+  const { slug } = context.params;
+
+  const { data, loading, error } = await createApolloClient().query({
     query: postQuery,
     variables: { slug },
   });
@@ -86,7 +110,11 @@ Single.getInitialProps = async (context) => {
   if (error) throw error;
   if (loading) return;
 
-  return { post: data?.postBy };
+  return {
+    props: {
+      post: data?.postBy,
+    },
+  };
 };
 
-export default withApollo({ ssr: false })(Single);
+export default Single;

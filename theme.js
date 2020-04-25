@@ -1,12 +1,30 @@
 import nightOwl from "@theme-ui/prism/presets/night-owl.json";
 
+const colArray = [
+  "crimson",
+  "lime",
+  "orange",
+  "lightsteelblue",
+  "pink",
+  "papayawhip",
+  "darkorchid",
+  "mediumpurple",
+];
+const shuffleArray = (arr) =>
+  arr
+    .map((a) => [Math.random(), a])
+    .sort((a, b) => a[0] - b[0])
+    .map((a) => a[1]);
+
+const randomCol = shuffleArray(colArray).shift();
+
 export default () => {
   return {
     colors: {
       text: "#000",
       background: "#fff",
-      primary: "#07c",
-      secondary: "#30c",
+      primary: "crimson", //"#07c",
+      secondary: "#BF1564", //"#30c",
       muted: "#f6f6f9",
       gray: "#dddddf",
       accent: "#639",
@@ -124,8 +142,12 @@ export default () => {
         lineHeight: "body",
         color: "text",
         a: {
-          textDecoration: "none",
-          color: "secondary",
+          "textDecoration": "none",
+          "color": "secondary",
+          ":hover": {
+            textDecoration: "underline",
+          },
+          "display": "inline-block",
         },
         h1: {
           fontSize: 5,
@@ -168,11 +190,14 @@ export default () => {
           marginTop: "space[3]",
           marginBottom: "space[3]",
         },
-        img: {
-          maxHeight: "450px",
-          maxWidth: "100%",
-          objectFit: "cover",
-        },
+        // a: {
+        //   "textDecoration": "none",
+        //   "display": "block",
+        //   "color": `${randomCol}`,
+        //   ":hover": {
+        //     textDecoration: "underline",
+        //   },
+        // },
       },
     },
   };
