@@ -147,7 +147,7 @@ const MdxPosts = ({ data }) => {
 
 export const getStaticProps = async (context) => {
   const { data } = await axios.get(
-    `${process.env.SERVER_URL}/api/rest/mdxposts`
+    `${process.env.SERVER_URL}/api/rest/mdx/posts`
   );
 
   return {
