@@ -1,6 +1,41 @@
 [
   {
     "artist": {
+      "mbid": "d3112057-2475-4eb7-8853-503204761d15",
+      "#text": "Alien Weaponry"
+    },
+    "@attr": {
+      "nowplaying": "true"
+    },
+    "mbid": "8d31fb0a-63e6-4426-b57a-3584cac7c4b8",
+    "album": {
+      "mbid": "c483f7bd-9be3-4676-b948-54b2a9f7cd48",
+      "#text": "Blinded"
+    },
+    "streamable": "0",
+    "url": "https://www.last.fm/music/Alien+Weaponry/_/Blinded",
+    "name": "Blinded",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/683226f605959327ad3cf348e7e8eb3f.jpg"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/683226f605959327ad3cf348e7e8eb3f.jpg"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/683226f605959327ad3cf348e7e8eb3f.jpg"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/683226f605959327ad3cf348e7e8eb3f.jpg"
+      }
+    ]
+  },
+  {
+    "artist": {
       "mbid": "",
       "#text": "BLVK SWVN"
     },

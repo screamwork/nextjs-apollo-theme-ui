@@ -3,6 +3,7 @@ import Document from "next/document";
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     // console.log(ctx);
+
     const originalRenderPage = ctx.renderPage;
 
     ctx.renderPage = () =>
