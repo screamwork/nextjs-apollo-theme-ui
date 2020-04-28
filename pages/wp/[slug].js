@@ -40,7 +40,7 @@ const Single = ({ post }) => {
       >
         <Box
           p={[2, 3, 0]}
-          sx={{ width: ["100%", "100%", "75%"], maxWidth: "100%" }}
+          sx={{ width: ["100%", "100%", "50%"], maxWidth: "100%" }}
         >
           <Heading
             as="h2"

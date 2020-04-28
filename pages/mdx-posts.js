@@ -110,30 +110,30 @@ const MdxPosts = ({ data }) => {
                 `${theme.space[3]}px`,
               ]}
             >
-              <Flex mb={3} sx={{ alignItems: "center" }}>
-                <FaCalendarDay
-                  size={`.9em`}
-                  color={"#909090"}
-                  style={{ marginRight: "7px" }}
-                />
-                <Text
-                  mr={2}
-                  sx={{ color: "grey", fontSize: `${theme.fontSizes[0]}` }}
-                >{`published at:`}</Text>
-                <Heading as="h5" sx={{ display: "inline-block" }}>
-                  {`${p.date}`}
-                </Heading>
-              </Flex>
               <Box>
                 <Heading
                   as="h3"
-                  mb={2}
+                  mb={0}
                   sx={{ textTransform: "capitalize", display: "inline-block" }}
                 >
                   <Link href={`/mdx/[slug]`} as={`/mdx/${p.slug}`}>
                     <a style={{}}>{`${p.title}`}</a>
                   </Link>
                 </Heading>
+                <Flex mb={3} sx={{ alignItems: "center" }}>
+                  <FaCalendarDay
+                    size={`.75em`}
+                    color={"#909090"}
+                    style={{ marginRight: "7px" }}
+                  />
+                  <Text
+                    mr={2}
+                    sx={{ color: "grey", fontSize: `${theme.fontSizes[0]}px` }}
+                  >{`published at:`}</Text>
+                  <Heading as="h6" sx={{ display: "inline-block" }}>
+                    {`${p.date}`}
+                  </Heading>
+                </Flex>
                 <Text
                   mb={[2, 2, 4, 4]}
                   sx={{ color: "whitesmoke" }}
