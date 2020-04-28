@@ -18,14 +18,10 @@ const Home = ({ homeData }) => {
 
       <Waypoint
         onEnter={() =>
-          (document.getElementsByClassName(
-            "indexBackground"
-          )[0].style.zIndex = -101)
+          (document.getElementById("indexBackground").style.zIndex = -101)
         }
         onLeave={() =>
-          (document.getElementsByClassName(
-            "indexBackground"
-          )[0].style.zIndex = -99)
+          (document.getElementById("indexBackground").style.zIndex = -99)
         }
       />
     </Layout>

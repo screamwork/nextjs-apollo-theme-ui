@@ -9,7 +9,7 @@ export const BackgroundImage = () => (
     }}
   >
     <Box
-      className="indexBackground"
+      id="indexBackground"
       sx={{
         position: "fixed",
         backgroundImage: `url(${require("../public/images/crowd4.jpg")})`,

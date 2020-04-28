@@ -45,7 +45,7 @@ const Single = ({ post }) => {
         >
           <Heading
             as="h2"
-            my={theme.space[4]}
+            mb={0}
             sx={{ textTransform: "capitalize", fontSize: theme.fontSizes[6] }}
           >
             {post.title}
@@ -61,12 +61,12 @@ const Single = ({ post }) => {
             <img src={post.featuredImage.sourceUrl} height="150" />
           )}
           {isMdx(post) ? (
-            <ReactMarkdown source={post.content} skipHtml={true} />
+            <ReactMarkdown source={post.content} skipHtml={false} />
           ) : (
             <Box
               className="wp-content"
               pt={3}
-              pb={6}
+              pb={4}
               dangerouslySetInnerHTML={{ __html: post.content }}
             ></Box>
           )}
