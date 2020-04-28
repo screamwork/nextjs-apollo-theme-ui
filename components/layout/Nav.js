@@ -9,7 +9,7 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import { Box, Flex, Heading, useThemeUI } from "theme-ui";
-import { SocialIcons } from "./SocialIcons";
+import { SocialIcons } from "../SocialIcons";
 
 export const Nav = () => {
   const [isSticky, setIsSticky] = React.useState(false);

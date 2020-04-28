@@ -48,7 +48,7 @@ export default ({ mdxContent, data }) => {
           backgroundColor: "white",
         }}
       >
-        <Box p={[2, 3, 3, 0]} sx={{ width: ["100%", "100%", "100%", "60%"] }}>
+        <Box p={[2, 3, 3, 0]} sx={{ width: ["100%", "100%", "75%", "50%"] }}>
           <Head>
             <title>{data.title}</title>
             <meta title="description" content={data.description} />

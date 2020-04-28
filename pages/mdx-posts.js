@@ -85,7 +85,7 @@ const MdxPosts = ({ data }) => {
         <Box
           p={[2, 2, 4, 4]}
           sx={{
-            width: ["100%", "100%", "75%"],
+            width: ["100%", "100%", "50%"],
             backgroundColor: "rgba(22,22,22,.975)",
             // border: "2px dotted crimson",
             // boxShadow: "5px 5px 10px #222",

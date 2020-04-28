@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Text, useThemeUI } from "theme-ui";
-import { SocialIcons } from "./SocialIcons";
+import { SocialIcons } from "../SocialIcons";
 
 export const Footer = () => {
   const context = useThemeUI();
@@ -14,7 +14,7 @@ export const Footer = () => {
         bottom: 0,
         zIndex: -101,
         // backgroundColor: theme.myStyles.navBlack
-        backgroundImage: `url(${require("../public/images/bg-dark1.jpg")})`,
+        backgroundImage: `url(${require("../../public/images/bg-dark1.jpg")})`,
         backgroundRepeat: "repeat repeat",
       }}
     >
@@ -30,7 +30,7 @@ export const Footer = () => {
           sx={{
             width: [35, 50, 75],
             height: [35, 50, 75],
-            backgroundImage: `url(${require("../public/images/gphoto.jpg")})`,
+            backgroundImage: `url(${require("../../public/images/gphoto.jpg")})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
           }}
