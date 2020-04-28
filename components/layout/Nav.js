@@ -118,30 +118,67 @@ export const Nav = () => {
           }}
         >
           {sidebarOpen ? (
-            <FaMinus
-              size={iconHeight}
-              onClick={() => handlePlusClick()}
-              color={"crimson"}
-            />
+            <Box
+              sx={{
+                "height": iconHeight,
+                ":hover": {
+                  cursor: "pointer",
+                },
+              }}
+            >
+              <FaMinus
+                size={iconHeight}
+                onClick={() => handlePlusClick()}
+                color={"crimson"}
+              />
+            </Box>
           ) : (
-            <FaPlus
-              size={iconHeight}
-              onClick={() => handlePlusClick()}
-              color={"whiteSmoke"}
-            />
+            <Box
+              sx={{
+                "height": iconHeight,
+                ":hover": {
+                  cursor: "pointer",
+                },
+              }}
+            >
+              <FaPlus
+                size={iconHeight}
+                onClick={() => handlePlusClick()}
+                color={"whiteSmoke"}
+              />
+            </Box>
           )}
+
           {showMenu ? (
-            <FaTimes
-              size={iconHeight}
-              onClick={() => handleBarsClick()}
-              color={showMenu ? "crimson" : "inherit"}
-            />
+            <Box
+              sx={{
+                "height": iconHeight,
+                ":hover": {
+                  cursor: "pointer",
+                },
+              }}
+            >
+              <FaTimes
+                size={iconHeight}
+                onClick={() => handleBarsClick()}
+                color={showMenu ? "crimson" : "inherit"}
+              />
+            </Box>
           ) : (
-            <FaBars
-              size={iconHeight}
-              onClick={() => handleBarsClick()}
-              color={"whiteSmoke"}
-            />
+            <Box
+              sx={{
+                "height": iconHeight,
+                ":hover": {
+                  cursor: "pointer",
+                },
+              }}
+            >
+              <FaBars
+                size={iconHeight}
+                onClick={() => handleBarsClick()}
+                color={"whiteSmoke"}
+              />
+            </Box>
           )}
         </Flex>
       </Flex>

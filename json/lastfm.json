@@ -1,20 +1,49 @@
 [
   {
     "artist": {
+      "mbid": "",
+      "#text": "BLVK SWVN"
+    },
+    "album": {
+      "mbid": "",
+      "#text": "Beauty Queen"
+    },
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/8b02286d3badb854293d347ce1ea0d70.jpg"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/8b02286d3badb854293d347ce1ea0d70.jpg"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/8b02286d3badb854293d347ce1ea0d70.jpg"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/8b02286d3badb854293d347ce1ea0d70.jpg"
+      }
+    ],
+    "streamable": "0",
+    "date": {
+      "uts": "1588086099",
+      "#text": "28 Apr 2020, 15:01"
+    },
+    "url": "https://www.last.fm/music/BLVK+SWVN/_/Beauty+Queen",
+    "name": "Beauty Queen",
+    "mbid": ""
+  },
+  {
+    "artist": {
       "mbid": "72938160-5fc0-45b8-ae62-f6bbbc1eec5a",
       "#text": "Stoned Jesus"
     },
-    "@attr": {
-      "nowplaying": "true"
-    },
-    "mbid": "8ce7ecc5-0f0f-480e-8a2d-09ebfd82fe35",
     "album": {
       "mbid": "22854968-11e4-4491-94fd-f1b04593ff10",
       "#text": "Pilgrims"
     },
-    "streamable": "0",
-    "url": "https://www.last.fm/music/Stoned+Jesus/_/Thessalia",
-    "name": "Thessalia",
     "image": [
       {
         "size": "small",
@@ -32,7 +61,15 @@
         "size": "extralarge",
         "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/701a87243d37e108d71c3a6e5a91eef8.jpg"
       }
-    ]
+    ],
+    "streamable": "0",
+    "date": {
+      "uts": "1588085766",
+      "#text": "28 Apr 2020, 14:56"
+    },
+    "url": "https://www.last.fm/music/Stoned+Jesus/_/Thessalia",
+    "name": "Thessalia",
+    "mbid": "8ce7ecc5-0f0f-480e-8a2d-09ebfd82fe35"
   },
   {
     "artist": {
@@ -321,77 +358,5 @@
     "url": "https://www.last.fm/music/De%2FVision/_/Your+Hands+on+My+Skin",
     "name": "Your Hands on My Skin",
     "mbid": "00d52918-db1e-474a-9472-c0ede0e8e396"
-  },
-  {
-    "artist": {
-      "mbid": "1145dc72-f16d-4eb1-9cff-62e37e354a34",
-      "#text": "Kiara Rocks"
-    },
-    "album": {
-      "mbid": "c4c7bb5d-6de6-47c7-b60a-1c7de409429a",
-      "#text": "Todos os Meus Passos"
-    },
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/287a952b716a1d5411513f32d0f98b2c.jpg"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/287a952b716a1d5411513f32d0f98b2c.jpg"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/287a952b716a1d5411513f32d0f98b2c.jpg"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/287a952b716a1d5411513f32d0f98b2c.jpg"
-      }
-    ],
-    "streamable": "0",
-    "date": {
-      "uts": "1588083424",
-      "#text": "28 Apr 2020, 14:17"
-    },
-    "url": "https://www.last.fm/music/Kiara+Rocks/_/Careless+Whisper",
-    "name": "Careless Whisper",
-    "mbid": ""
-  },
-  {
-    "artist": {
-      "mbid": "",
-      "#text": "Crazy Town"
-    },
-    "album": {
-      "mbid": "3141eeef-96f2-4565-8d7a-ddc6bfe8f550",
-      "#text": "Butterfly"
-    },
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/4cca950604ff4784bbdb3cb0f325574c.png"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/4cca950604ff4784bbdb3cb0f325574c.png"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/4cca950604ff4784bbdb3cb0f325574c.png"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/4cca950604ff4784bbdb3cb0f325574c.png"
-      }
-    ],
-    "streamable": "0",
-    "date": {
-      "uts": "1588083149",
-      "#text": "28 Apr 2020, 14:12"
-    },
-    "url": "https://www.last.fm/music/Crazy+Town/_/Butterfly+-+Extreme+Mix",
-    "name": "Butterfly - Extreme Mix",
-    "mbid": ""
   }
 ]
