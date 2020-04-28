@@ -5,17 +5,21 @@ import fetch from "isomorphic-unfetch";
 
 export const host =
   process.env.NODE_ENV === "development"
-    ? "http://localhost/wp2020"
-    : "http://graphql-server-exp.herokuapp.com";
+    ? "http://localhost/wp2020/graphql"
+    : "http://localhost/wp2020/graphql";
+// export const host =
+//   process.env.NODE_ENV === "development"
+//     ? "http://localhost/wp2020/graphql"
+//     : "http://graphql-server-exp.herokuapp.com";
 
 const httpLink = new HttpLink({
-  uri: `${host}/graphql`,
+  uri: `${host}`,
   credentials: "same-origin",
   // headers: {
   //   'Content-type': 'application/json',
   //   'Authorization': 'Bearer jwtToken'
   // }
-  fetch
+  fetch,
 });
 
 export const createApolloClient = (initialState, ctx) => {
@@ -24,6 +28,6 @@ export const createApolloClient = (initialState, ctx) => {
   return new ApolloClient({
     ssrMode: Boolean(ctx),
     link: httpLink,
-    cache: new InMemoryCache().restore(initialState)
+    cache: new InMemoryCache().restore(initialState),
   });
 };

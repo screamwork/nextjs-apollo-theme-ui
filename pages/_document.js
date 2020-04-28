@@ -2,6 +2,7 @@ import Document from "next/document";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
+    // console.log(ctx);
     const originalRenderPage = ctx.renderPage;
 
     ctx.renderPage = () =>
@@ -9,7 +10,7 @@ class MyDocument extends Document {
         // useful for wrapping the whole react tree
         enhanceApp: (App) => App,
         // useful for wrapping in a per-page basis
-        enhanceComponent: (Component) => Component
+        enhanceComponent: (Component) => Component,
       });
 
     // Run the parent `getInitialProps`, it now includes the custom `renderPage`
