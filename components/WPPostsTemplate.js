@@ -11,9 +11,9 @@ export const WPPostsTemplate = ({ posts, title }) => {
   return (
     <Flex
       className="postTemplate"
-      pt={[theme.space[4], theme.space[5], theme.space[6]]}
-      pb={5}
-      mt={[70, 86, 86]}
+      mt={70}
+      py={[4, 4, 5, 5]}
+      px={[1, 2, 0, 0]}
       sx={{
         flex: 1,
         minHeight: "100vh",

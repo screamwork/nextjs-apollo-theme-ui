@@ -13,7 +13,7 @@ const MdxPosts = ({ data }) => {
   const { theme, colorMode, setColorMode } = context;
   const [paginatedPosts, setPaginatedPosts] = React.useState([]);
   const [current, setCurrent] = React.useState(1);
-  const rowsPerPage = 3;
+  const rowsPerPage = 4;
   let sliced = null;
 
   const getSliced = (offset, page) => {
@@ -68,6 +68,9 @@ const MdxPosts = ({ data }) => {
   return (
     <Layout>
       <Box
+        mt={70}
+        py={[4, 4, 5, 5]}
+        px={[1, 2, 0, 0]}
         sx={{
           flex: 1,
           display: "flex",

@@ -37,9 +37,9 @@ export default ({ mdxContent, data }) => {
     <Layout>
       <Flex
         className="mdxpage"
-        mt={[70, 70, 86, 86]}
-        pt={[theme.space[4], theme.space[5], theme.space[5], theme.space[6]]}
-        pb={theme.space[5]}
+        mt={70}
+        py={[4, 4, 5, 5]}
+        px={[1, 2, 0, 0]}
         sx={{
           flex: 1,
           justifyContent: "center",

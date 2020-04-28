@@ -59,7 +59,7 @@ export const Nav = () => {
       <Sidebar sidebarOpen={sidebarOpen} />
       <Flex
         id="nav"
-        p={["7px 25px 7px 5px", "15px 25px 15px 5px", "15px 55px 15px 35px"]}
+        p={["7px 25px 7px 5px", "7px 25px 7px 5px", "7px 55px 7px 35px"]}
         sx={{
           flex: 1,
           flexDirection: "row",
@@ -149,7 +149,11 @@ export const Nav = () => {
   );
 };
 
-const links = [{ href: "https://zeit.co/now", label: "ZEIT" }].map((link) => {
+const links = [
+  { href: "https://zeit.co/now", label: "ZEIT" },
+  { href: "https://google.com", label: "Google" },
+  { href: "https://last.fm", label: "LastFM" },
+].map((link) => {
   link.key = `nav-link-${link.href}-${link.label}`;
   return link;
 });
@@ -165,7 +169,7 @@ const linkStyle = {
 };
 
 const NavHtml = ({ setShowMenu, showMenu }) => (
-  <nav className="nav">
+  <nav>
     <div>
       <Link href="/wp-posts">
         <a style={linkStyle}>/WP POSTS</a>
@@ -226,6 +230,7 @@ const Menu = ({ setShowMenu, showMenu }) => (
 
 const Sidebar = ({ sidebarOpen }) => (
   <Box
+    mt={`70px`}
     px={4}
     className="sidebar"
     style={{
