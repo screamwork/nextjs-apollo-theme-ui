@@ -62,7 +62,7 @@ export const WPPostsTemplate = ({ posts, title }) => {
               <Text sx={{ fontSize: theme.fontSizes[0], marginBottom: 10 }}>
                 {moment(first.date).format("YYYY/MM/DD")}
               </Text>
-              {first.featuredImage.sourceUrl && (
+              {first.featuredImage?.sourceUrl && (
                 <img
                   src={first.featuredImage.sourceUrl}
                   style={{ maxWidth: "100%" }}

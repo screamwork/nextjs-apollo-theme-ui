@@ -18,9 +18,10 @@ const Single = ({ post }) => {
     if (!post?.tags?.nodes?.length) {
       return;
     }
-    const found = post.tags.nodes.find((item) => item.slug === "mdx");
-    if (found) return true;
-    else return false;
+    return post.tags.nodes.find((item) => {
+      console.log(item);
+      return item.slug === "mdx";
+    });
   };
 
   return (
@@ -60,10 +61,7 @@ const Single = ({ post }) => {
             <img src={post.featuredImage.sourceUrl} height="150" />
           )}
           {isMdx(post) ? (
-            <ReactMarkdown
-              source={`### header test\nbro what a rush`}
-              skipHtml={true}
-            />
+            <ReactMarkdown source={post.content} skipHtml={true} />
           ) : (
             <Box
               className="wp-content"
@@ -79,11 +77,11 @@ const Single = ({ post }) => {
 };
 
 export const getStaticPaths = async () => {
-  const { data, loading, error } = await createApolloClient().query({
+  const { data, loading, errors } = await createApolloClient().query({
     query: postsQuery,
   });
 
-  if (error) throw error;
+  if (errors) throw errors;
   if (loading) return;
 
   const paths = data.posts.nodes.map((p) => ({
@@ -102,12 +100,12 @@ export const getStaticProps = async (context) => {
   // console.log(context);
   const { slug } = context.params;
 
-  const { data, loading, error } = await createApolloClient().query({
+  const { data, loading, errors } = await createApolloClient().query({
     query: postQuery,
     variables: { slug },
   });
 
-  if (error) throw error;
+  if (errors) throw errors;
   if (loading) return;
 
   return {
