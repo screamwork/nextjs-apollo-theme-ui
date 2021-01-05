@@ -24,7 +24,7 @@
     "apollo-client": "^2.6.8",
     "apollo-link-http": "^1.5.17",
     "apollo-server-micro": "^2.11.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "connect-redis": "^4.0.4",
     "deepmerge": "^4.2.2",
     "express": "^4.17.1",
